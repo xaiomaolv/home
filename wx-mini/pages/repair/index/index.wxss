@@ -1,0 +1,28 @@
+/* pages/repair/index/index.wxss */
+.card {
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #484848;
+}
+.size{
+  text-align:center;
+  width:120rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  line-height: 100rpx;
+  margin: 0 auto;
+  /* position: absolute; */
+}
+.iconfont{
+  color: var(--primary-color);
+  font-size:60rpx;
+}
+.title_text{
+  color:#484848;
+  font-weight:400;
+  font-size:28rpx; 
+  margin:20rpx auto;
+  text-align: center;
+}

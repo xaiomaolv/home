@@ -1,0 +1,74 @@
+<!--pages/gas/list/list.wxml-->
+<view class="container {{show? 'indexFixed':''}}">
+    <!-- <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view> -->
+
+    <view class="row">
+
+        <view class="mg-tp-15 pd-15 card" wx:for="{{list}}" wx:key="index" data-value="{{item}}" style="line-height:56rpx">
+
+            <view class=" row  tx-lt">
+
+                <view class="flex-col-24 tx-lt">
+                    <view class="row flex-col pd-tp-15 ">
+                        <view class="flex-col-8">欠费金额</view>
+                        <view class="flex-col-10">
+                            {{item.totalBill? item.totalBill + '元' : ''}}
+                        </view>
+                        <view class="flex-col-6 tx-rt">
+                            <button class="pay-btn " data-value="{{item}}" bindtap="handlepay">去交费</button>
+                        </view>
+                    </view>
+                    <view class="row flex-col">
+                        <view class="flex-col-8">交费户名</view>
+                        <view class="flex-col-16">
+                            {{item.room.owner.ownerName}}
+                        </view>
+                    </view>
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">地址</view>
+                        <view class="flex-col-16">
+                          {{item.room.community.communityName}}{{item.room.floor.name ? item.room.floor.name : '' }}{{item.room.unit.unitNum ? '-' + item.room.unit.unitNum : '' }}{{item.room.roomNum ? '-' + item.room.roomNum : '' }}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费标题</view>
+                        <view class="flex-col-16">
+                            {{item.payTitle}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费类目</view>
+                        <view class="flex-col-16">
+                            {{item.category.categoryName}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">账单区间</view>
+                        <view class="flex-col-16">
+                            {{item.intervalStart? item.intervalStart: ''}} {{item.intervalStart || item.intervalEnd ? '至': ''}}
+                            {{item.intervalEnd? item.intervalEnd: ''}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="mg-tp-15  card " wx:if="{{list.length == 0}}">
+        <view class="flex-col-24 tx-ct pd-tb-20">
+            暂无交费项
+        </view>
+    </view>
+
+    <view class="tx-ct " wx:if="{{list.length !== 0}}">
+        <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2" style="font-size:48rpx;"></text>没有更多了...</text>
+        <!-- <text wx:if="{{!showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>加载更多...</text> -->
+    </view>
+
+
+</view>

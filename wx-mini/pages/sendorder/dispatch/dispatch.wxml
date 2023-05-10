@@ -1,0 +1,42 @@
+<!--pages/sendorder/dispatch/dispatch.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row flex-col flex-wrap tx-ct">
+    <radio-group class="radio" bindChange="dispathChange" style="width:100%">
+    <view wx:for="{{repairUserList}}" wx:key="index" bindtap="dispathChange" data-value="{{item}}" class="flex-row card card-bg" >
+      <view  class="flex-col flex-col-24">
+        <view  class="flex-col-20 tx-lt">姓名：{{item.nickName}}</view>
+        <view  class="flex-col-4 tx-rt">
+          <radio value="{{item.id}}" class="item-radio " checked="{{repairUserId == item.userId}}" />       
+        </view>
+      </view>
+      <view  class="flex-col flex-col-24">
+        <view  class="flex-col-20 tx-lt">手机号：{{item.phonenumber}}</view>
+        <view  class="flex-col-4 tx-rt"></view>
+      </view>
+      <view  class="flex-col flex-col-24">
+        <view  class="flex-col-20 tx-lt">所属小区：{{item.communityName}}</view>
+        <view  class="flex-col-4 tx-rt"></view>
+      </view>
+    </view>
+
+    <!-- <view  bindtap="dispathChange" data-value="{{obj}}" class="flex-row card card-bg" >
+      <view  class="flex-col flex-col-24 pd-tb-15">
+        <view  class="flex-col-20 tx-lt">其他</view>
+        <view  class="flex-col-4 tx-rt">
+          <radio value="{{obj.id}}" class="item-radio " checked="{{repairUserId == obj.id}}" />       
+        </view>
+      </view>
+    </view> -->
+  </radio-group>
+
+  <view class="tx-ct empty" wx:if="{{repairUserList.length == 0}}">
+      <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+      </image>
+      <text class="mg-tp-15">暂无派单人员</text>
+    </view>
+  </view>
+</view>
+

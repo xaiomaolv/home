@@ -1,0 +1,6 @@
+/* pages/waterbill/index/index.wxss */
+.card{
+  padding:50rpx 30rpx;
+  line-height: 56rpx;
+}
+

@@ -1,0 +1,19 @@
+<!--components/showmodal-input/index.wxml-->
+<view wx:if='{{show}}'>
+  <view class='mask_layer' bindtap='modal_click_Hidden' />
+  <view class='modal_box' style="width:{{width}}">
+    <view class="title tx-ct ft-se-16">
+      提示 
+      <!-- <image class="close" bindtap='cancel' src="./img/close.png"></image> -->
+    </view>
+    <view class='content'>
+      <view class="row pd-15 li-hg-24">
+       您之前解绑过缴费卡，现在可直接恢复缴费卡，如需重新绑定，请更换和之前不同的银行卡
+      </view>
+    </view>
+    <view class='btn1'>
+      <view bindtap='cancel' class='cancel'>继续更换</view>
+      <view bindtap='confirm' class='Sure'>恢复</view>
+    </view>
+  </view>
+</view>

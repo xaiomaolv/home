@@ -1,0 +1,54 @@
+<!--pages/house/house.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="seach flex-col pd-tb-10 pd-rt-10 bg-w" style="padding-left:10rpx">
+    <view class="flex-col pd-rt-20" style="min-width:100rpx; position: relative;">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[2]}}
+        </view>
+        <view class="iconfont icon-xia posin-icon"></view>
+      </picker>
+    </view>
+    <view class="flex-col row " style="flex:1;  border-radius: 38px;background: #eee;">
+      <input class="seach-input" type="text" style="height:70rpx" data-obj="communityName" value="{{communityName}}"
+        bindfocus="inputFocus" bindinput="inputChange" />
+      <view class="seach-btn" style="height:70rpx;" bindtap="handelSeach">搜索</view>
+    </view>
+    <view class="flex-col" wx:if="{{show}}">
+      <view class="seach-btn" style="height:70rpx; color:#484848;" bindtap="handelCancel">取消</view>
+    </view>
+  </view>
+
+  <view class="scroll-col mg-tp-15" wx:if="{{list.length !== 0}}">
+    <view class="scroll">
+      <view class="list bg-w" wx:for="{{list}}" wx:key="index" data-value="{{item}}" >
+        <view class="row flex-col pd-10 bd-bt">
+          <view class="row flex-col-21" style="margin-top:0px">
+            <view>{{item.communityName}}</view>
+            <view style="font-size:24rpx;color:#bfbfbf">{{item.address}}</view>
+          </view>
+          <view class="flex-col-3 tx-ct" style="margin-top:0px;">
+            <radio value="{{item.id}}" class="item-radio " checked="{{checkedId == item.id}}" data-value="{{item}}" bindtap="checkeChange"/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card tx-ct" wx:if="{{list.length == 0}}" >
+    <view>暂无数据</view> 
+  </view>
+  <!-- 
+<view class="flex-col btn-grop bd-tp" wx:if="{{list.length !== 0}}">
+  <view class="flex-col-12 tx-lt">
+    <view class="pd-15 flex-col-12 tx-ct" style=" color:;float:left" bindtap="handleSelectCencel">取消</view>
+  </view>
+  <view class="flex-col-12 tx-rt">
+    <view class="pd-15 flex-col-12 tx-ct" style="background: var(--primary-color);color:#FFF;float:right" bindtap="handleSelectConfirm">确定</view>
+  </view>
+</view> 
+-->
+</view>

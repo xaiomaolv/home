@@ -1,0 +1,234 @@
+/* 该项目css */
+/* 不介意使用内嵌样式,使用前请先大致看一遍main.wxss和project.wxss */
+/* 尽量使用已经定义的css样式和cu-样式 */
+page {
+  /* 主色颜色 */
+ 
+  /* 缅甸 */
+  /* --primary-color:linear-gradient(45deg, #8dc63f, #fbbd08);  */
+  /* 老挝 */
+  /* --primary-color:linear-gradient(45deg, #E50000, #555691);  */
+  /* 越南 */
+  /* --primary-color:linear-gradient(45deg, #E50000, #fbbd08);  */
+  /* 美国 */
+  /* --primary-color:linear-gradient(45deg, #8c9ccf, #46477D);  */
+   /* 中国 */
+   /* --primary-color:#DE2B2C;  */
+
+  /* 副色颜色（暂未使用） */
+  --secondly-color: #000000;
+
+  /* 边框定义 */
+  --border-radius: 10rpx;
+}
+
+canvas.off-screen {
+  width: 1800rpx;
+  height: 1800rpx;
+  position: fixed;
+  left: -5000rpx;
+}
+
+/* 按钮 */
+.line-btn {
+  width: 150rpx !important;
+  margin: 20rpx 0rpx 0rpx 20rpx !important;
+}
+
+.btn-block {
+  width: 92% !important;
+}
+
+.cu-bar.tabbar .submit {
+  /* background: var( --primary-color); */
+  background: pageBackgroundColor;
+
+}
+
+/* 主色 */
+.primary {
+  background: var(--primary-color);
+  color: white;
+  padding: 0rpx;
+  height: 100rpx;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  line-height: 100rpx;
+}
+
+.primary[plain] {
+  color: var(--primary-color);
+  background-color: white;
+  border: solid var(--primary-color) 1rpx;
+}
+
+/* 背景颜色 */
+.bg_color {
+  background-color: #ecf5f4;
+}
+
+/* 副色 */
+.secondly {
+  background-color: white !important;
+  border: var(--primary-color) solid 1rpx;
+  color: var(--primary-color);
+}
+
+/* 字体大小 */
+.font-sm {
+  font-size: 0.7rem;
+}
+
+.font-md {
+  font-size: 1rem;
+}
+
+.font-lg {
+  font-size: 1.5rem;
+}
+
+.font-xl {
+  font-size: 2rem !important;
+}
+
+.font-xl input {
+  height: 2rem;
+}
+
+/* 独立一行 */
+.row {
+  display: block;
+}
+
+/* 非独立行 */
+.inline {
+  display: inline-block;
+}
+
+.code-btn {
+  color: var(--primary-color);
+  background-color: white !important;
+  border: solid var(--primary-color) 1rpx;
+  width: 180rpx !important;
+}
+
+/* 卡片 */
+.card {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  margin:30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color:#484848 ;
+  -webkit-box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+	box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+/*主题卡片*/
+.primary-card{
+  background-color:var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #FFF;
+}
+.pm-color{
+  color: var(--primary-color);
+}
+.cu-card>.cu-item {
+  display: block;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 10rpx;
+  margin: 30rpx;
+  box-shadow: 5rpx 5rpx 10rpx 5rpx #cfd7d6;
+}
+
+
+.card-bg {
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* 选中 */
+.card.selected {
+  box-shadow: 10px 10px 5px #888888;
+}
+
+
+/* 水平垂直居中 */
+.text-centerhv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 全屏高度 */
+.height-25 {
+  height: 25vh;
+}
+
+.height-50 {
+  height: 50vh;
+}
+
+.height-75 {
+  height: 75vh;
+}
+
+/* 全屏宽度 */
+.width-25 {
+  width: 25vw;
+}
+
+.width-50 {
+  width: 50vw;
+}
+
+.width-100 {
+  width: 100vw;
+}
+
+/* 圆形 */
+.circle-25 {
+  height: 25vw;
+  width: 25vw;
+  border-radius: 5000rpx;
+}
+
+.circle-33 {
+  height: 33.33vw;
+  width: 33.33vw;
+  border-radius: 5000rpx;
+}
+
+.circle-50 {
+  height: 50vw;
+  width: 50vw;
+  border-radius: 5000rpx;
+}
+
+/* 图标 */
+.cu-bar.tabbar.shop .action {
+  color: var(--primary-color);
+  background: none
+}
+
+/* 文本框 */
+.cu-form-group textarea{
+  height:1.5em
+}
+.empty{
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform:translateX(-50%);
+  color: #8a8a8a;
+}
+.empty-img{
+  width: 500rpx;
+}
+.p-title{
+  font-size:28rpx;
+  font-weight: 700;
+  color: #000000;
+}

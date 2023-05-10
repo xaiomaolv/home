@@ -1,0 +1,32 @@
+<!--pages/Notice/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+	<view class="" wx:for="{{list}}" wx:key="item" data-value="{{item}}" bindtap="handleItem" style="line-height:52rpx">
+		<view class="card flex-col">
+			<view class="flex-col-21">
+				<view class="">
+				<text class="cuIcon-notification" style="font-size:36rpx; color:var(--primary-color)"></text>
+				{{item.community.communityName ? item.community.communityName  : ''}} {{item.title}}</view>
+				<view class="">
+					<text class="mg-lt-10"> 发布时间：{{item.createdTime}}</text>
+				</view>
+			</view>
+			<view class="flex-col-3 tx-rt ft-se-20"> <text class="cuIcon-right lg text-gray inline"></text></view>
+		</view>
+	</view>
+
+	<view class="tx-ct empty" wx:if="{{list.length == 0}}">
+		<image src="https://img01.yzcdn.cn/vant/empty-image-default.png"  class="empty-img">
+		</image>
+		<text class="mg-tp-15">暂无公告</text>
+	</view>
+
+	<view class="tx-ct" wx:if="{{list.length !== 0}}">
+    <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>没有更多了...</text>
+    <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>加载更多...</text> -->
+  </view>
+</view>

@@ -1,0 +1,11 @@
+/* pages/mine/houseinfo/detail/detail.wxss */
+.flex-col{
+  line-height: 48rpx;
+}
+.card {
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #484848;
+}

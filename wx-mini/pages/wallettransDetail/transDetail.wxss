@@ -1,0 +1,50 @@
+/* pages/wallet/transDetail/transDetail.wxss */
+.record{
+	background-color: var(--white);
+  padding: 20rpx 30rpx;
+  /* margin-bottom:2rpx; */
+	align-items: center;
+	min-height: 120rpx;
+  justify-content: space-between;
+  margin-bottom:3rpx;
+}
+  .under{
+    margin-top:10rpx;
+  }
+  .money{
+    float:right;
+    color:#f9364f;
+  }
+  .time{
+    color:#999999;
+    font-size:26rpx;
+  }
+  .succerr{
+    float:right;
+    color:#999999;
+    font-size:26rpx;
+  }
+  .lodemore{
+    display: inline-block;
+    margin-top: 40rpx;
+    color: var(--primary-color);
+    cursor: pointer;
+    letter-spacing: 3px;
+    font-weight: 600;
+    line-height: 56rpx;
+    position: relative;
+    padding-left: 60rpx;
+  }
+  .cuIcon-loading2{
+    margin-bottom: -100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) ;
+  }
+  .green{
+    color: green;
+  }
+  .red{
+    color: red;
+  }

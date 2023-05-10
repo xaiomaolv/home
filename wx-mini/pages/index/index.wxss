@@ -1,0 +1,247 @@
+/* pages/index/index.wxss */
+.container {
+  min-height: 100%;
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+  /* background-color: #eee; */
+  font-size: 32rpx !important;
+  color: #484848 !important;
+  position: relative;
+  background-color: #F8F8F8;
+}
+
+.primary-card {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: 20rpx 30rpx 0 30rpx;
+  padding: 20rpx 20rpx;
+  color: #FFF;
+  border-radius: 30rpx;
+}
+
+.primary-card .p-title,
+.primary-card .title_text,
+primary-card .iconfont {
+  color: #FFF !important;
+}
+
+.card {
+  background-color: #FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 30rpx 0 30rpx;
+  padding: 30rpx;
+  color: #484848;
+}
+
+.iconfont {
+  color: var(--primary-color);
+  font-size: 60rpx;
+}
+
+.title_text {
+  color: #484848;
+  font-weight: 400;
+  font-size: 28rpx;
+  /* margin:0rpx auto ; */
+  text-align: center;
+}
+.bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40%;
+  width: 100%;
+  /* background:#fd7380; */
+  /* background: linear-gradient(#fd7380,#fd7380, #FFF); 标准的语法（必须放在最后） */
+  /* background: linear-gradient(top,bottom,#fd7380, #FF8B7B); 标准的语法（必须放在最后） */
+  /* box-shadow: 5px 5px 5px #FF8B7B; */
+  box-shadow:0px 15px 10px -15px #FF8B7B;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  /* margin-top: 0; */
+  height: 360rpx;  
+  /* top:0;
+  left:0;
+  z-index: -1;
+  position:fixed; */
+  }
+
+.size {
+  text-align: center;
+  width: 120rpx;
+  /* height: 120rpx; */
+  margin: 0 auto;
+  /* border-radius: 50%; */
+  /* line-height: 120rpx; */
+  /* position: absolute; */
+}
+
+.notice {
+  margin: 20rpx 30rpx;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx;
+  background-color: #FFF;
+  font-size: 30rpx;
+}
+
+.notice .title {
+  font-weight: 800;
+}
+
+.todo {
+  margin: 10rpx 0rpx;
+  border-radius: 15rpx;
+  padding: 20rpx 0;
+  background-color:#FFF;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo .bind {
+  /* width: 150rpx;
+  height: 60rpx; */
+  color: black;
+  font-size: 28rpx;
+  /* padding: 18rpx;
+  margin: 10rpx; */
+  color: var(--primary-color);
+  background-color: var(--ghostWhite);
+}
+
+.item {
+  padding: 10rpx 30rpx;
+  /* margin-top: 10rpx; */
+}
+
+.title-card {
+  font-weight: 800;
+  font-size: 30rpx;
+}
+
+.tips {
+  /* position: absolute;
+  top: 80rpx; */
+  width: 100%;
+  color: white;
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips .bind-btn {
+  width: 220rpx;
+  /* height: 60rpx; */
+  margin-top: 20rpx;
+  border-radius: 20px;
+  font-size: 28rpx;
+  color: var(--primary-color);
+}
+.swiper-card{
+  /* display: none; */
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 340rpx;
+  /* width: 92%;
+  margin: 0 4%; */
+  /* padding: 30rpx; */
+  /* height: 100%; */
+  border-radius: 30rpx;
+  /* background-color: #FFF; */
+  overflow: hidden;
+}
+.card {
+  width: 90%;
+  margin-left: 5%;
+  /* height: 350rpx; */
+  /* background: rgb(221, 213, 231); */
+  padding: 30rpx 0;
+  /* background: #ffffff; */
+  border-radius: 30rpx;
+  /* box-shadow: 5px 5px 5px #ffffff; */
+  z-index: 1;
+}
+
+.background {
+  width: 100%;
+  margin-top: 0;
+  /* height:500rpx; */
+  top: 0;
+  left: 0;
+}
+
+.iconfont {
+  /* color:#fff; */
+  font-size: 60rpx;
+}
+
+.title_text {
+  color: rgb(31, 20, 20);
+  font-weight: 400;
+  font-size: 30rpx;
+  /* margin-top:20rpx; */
+  text-align: center;
+}
+
+image {
+  width: 100%;
+}
+
+input {
+  outline: none;
+  border: none !important;
+  list-style: none !important;
+}
+
+button::after {
+  border: none;
+}
+
+.slogan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36rpx;
+  line-height: 56rpx;
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  color: #FFF;
+  /* color: var(--primary-color); */
+}
+
+.cardno {
+  position: relative;
+  padding-left: 50rpx;
+}
+
+.icon-icbc {
+  font-size: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-45%);
+}
+
+.money-card {
+  padding: 0rpx 20rpx ;
+  line-height: 54rpx;
+  color: #FFF;
+  border-top: #FFF solid 0px;
+}
+.mg-bt-5{
+  margin-bottom: 10rpx;
+}

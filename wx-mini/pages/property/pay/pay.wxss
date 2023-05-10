@@ -1,0 +1,65 @@
+/* pages/waterbill/pay/pay.wxss */
+.container{
+  padding-bottom: 240rpx;
+}
+.card{
+  margin: 40rpx 20rpx 10rpx 20rpx;
+  padding:20rpx 30rpx;
+  line-height: 52rpx;
+  position: relative;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #FFF;
+  line-height: 60rpx;
+  position: absolute;
+  top:-15rpx;
+  left:50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.primary{
+	width:90%!important;
+  height: 110rpx;
+  line-height: 110rpx;
+	background-color: var(--primary-color)!important;
+	border-radius: var(--border-radius-5)!important; 
+}
+.bd-bt{
+  border-bottom: solid 1px #e6e6e6;
+  position: relative;
+}
+.yuan{
+  position: absolute;
+  font-size: 56rpx;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pd-lt-30{
+  padding-left: 60rpx;
+}
+.tab{
+  width: 90%;
+  margin: 0 auto;
+  line-height: 60prx;
+  border: #eee solid 1px;
+  border-radius: 10rpx;
+}
+.active{
+  border: var(--primary-color) solid 1px;
+  background-color: var(--primary-color);
+  color: #FFF;
+}
+.account{
+  background-color: var(--primary-color);
+  color: #FFF;
+  line-height: 140rpx ;
+  font-size: 18px;
+}
+.copy {
+  bottom:160rpx;
+}

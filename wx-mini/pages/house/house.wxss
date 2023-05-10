@@ -1,0 +1,55 @@
+/* pages/house/house.wxss */
+.map_container{
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+.btn-grop{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10;
+}
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.place_info {
+  padding: 0 5px;
+}
+.seach-input{
+ height: 70rpx;
+ line-height: 70rpx;
+ padding: 0 10rpx;
+ flex: 1;
+} 
+.seach-btn{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 15rpx;
+  color: var(--primary-color);
+}
+.scroll-col{
+  height: calc(100% - 140px);
+  padding: 0;
+}
+.scroll{
+  padding:0 0 40rpx 0
+}
+.seach-input{
+  padding: 0 30rpx;
+}
+.list{
+  line-height: 56rpx;
+}
+.posin-icon{
+  position: absolute;
+  right:5rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font: 28rpx;
+}

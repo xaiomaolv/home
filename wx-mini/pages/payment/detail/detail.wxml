@@ -1,0 +1,49 @@
+<!--pages/payment/detail/detail.wxml-->
+<view>
+  <view class="row flex-col flex-wrap tx-ct">
+    <view wx:for="{{list}}" wx:key="item" class="flex-row flex-col-24 card card-bg" data-value="{{item}}">
+      <view class="row">
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">编号：{{item.billNumber}}</view>
+          <view class="flex-col-4 tx-rt">
+            <button class="pay-btn " data-value="{{item}}" wx:if="{{item.state == 0}}" bindtap="handlePay">交费</button>
+            <button class="pay-btn " data-value="{{item}}" wx:if="{{item.state == 2}}" bindtap="handleDetail">明细</button>
+          </view>
+        </view>
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">交费类目：{{item.category.categoryName}}</view>
+        </view>
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">房屋：【{{item.buildingRoom.community.communityName}}】
+            {{item.floor.name}} {{item.unit.unitNum}} {{item.roomNum}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">状态：{{item.state==0 ?"待交费":"" || item.state==2 ?"交费成功":""}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">待交金额：{{item.totalBill}}元</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">备注：{{item.payTitle}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">账单时间：{{item.modifiedTime}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+<view class="tx-ct empty" wx:if="{{list == 0}}">
+  <image src="https://img01.yzcdn.cn/vant/empty-image-default.png"  class="empty-img"></image>
+  <text class="mg-tp-15">暂无记录</text>
+</view>
+ 
+</view>

@@ -1,0 +1,53 @@
+<!--pages/mine/houseinfo/detail/detail.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="card" wx:if="{{info}}">
+    <view class="bg-w pd-5-8 mg-tp-15">
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">业主姓名</view>
+      <view class="flex-col-12 tx-rt">{{info.owner.ownerName}}</view>
+    </view>
+    <!-- <view class="flex-col">
+      <view class="flex-col-12 tx-lt">身份证号</view>
+      <view class="flex-col-12 tx-rt">{{info.owner.identity}}</view>
+    </view> -->
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">联系方式</view>
+      <view class="flex-col-12 tx-rt">{{info.owner.ownerPhone}}</view>
+    </view>
+  </view>
+  <view class="bg-w pd-5-8 mg-tp-15">
+    <!-- <view class="flex-col">
+      <view class="flex-col-12 tx-lt">房屋ID</view>
+      <view class="flex-col-12 tx-rt">496656666666</view>
+    </view> -->
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">小区</view>
+      <view class="flex-col-12 tx-rt">{{info.community.communityName}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">楼栋</view>
+      <view class="flex-col-12 tx-rt">{{info.floor.name}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">单元</view>
+      <view class="flex-col-12 tx-rt">{{info.unit.unitNum}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">房间号</view>
+      <view class="flex-col-12 tx-rt">{{info.roomNum}}</view>
+    </view>
+    <!-- <view class="flex-col">
+      <view class="flex-col-12 tx-lt">建筑面积</view>
+      <view class="flex-col-12 tx-rt">{{info.builtUpArea ? info.builtUpArea + '平方米' :''}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">户型</view>
+      <view class="flex-col-12 tx-rt">{{info.apartment ? info.apartment: ''}}</view>
+    </view> -->
+  </view>
+  </view>
+  
+</view>

@@ -1,0 +1,14 @@
+/* pages/house/familylist/familylist.wxss */
+  .card {
+    /* background-color: var(--primary-color); */
+    background-color: #FFF;
+    border-radius: var(--border-radius);
+    margin: 30rpx 20rpx 0 20rpx ;
+    padding: 30rpx;
+    color: #666;
+    line-height: 50rpx;
+  }
+  .pg-bt-0{
+    padding-bottom: 0;
+  }
+

@@ -1,0 +1,23 @@
+<!--pages/wallet/recharge/recharge.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="card">
+    <view class="pd-tb-10 flex-col bd-bt tx-ct">
+      <view class="flex-col-3 flag">￥</view>
+      <input class="flex-col-18 tx-lt num" placeholder="0.00" type="digit" data-obj="form.money" value="{{form.money}}" placeholder-class="placeholder-color" bindinput="handelInputChange"></input>
+      <view class="flex-col-3 yuan">元</view>
+    </view>
+    <view class="tips">温馨提示：提交转入申请后2小时内到账，结果请稍后查询</view>
+    <view class="row flex-col flex-wrap mg-tp-15">
+      <view class="flex-col-6 tx-ct" wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" data-value="{{item.value}}" bindtap="currentTab">
+        <view class="tab {{currentTab == index ? 'active' : ''}}">{{item.value}}元</view>
+      </view>
+    </view>
+  </view> 
+  <!-- <view class="" style="width:92%; margin:0 auto;">
+     <text class="title-notic" space="emsp">温馨提示：</text>提交转入申请后2小时内到账，结果请稍后查询
+  </view> -->
+  <button class="submit-btn primary btn-block" bindtap="charge">资金转入</button>
+</view>

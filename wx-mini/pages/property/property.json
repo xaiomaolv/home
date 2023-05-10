@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance":150,
+  "usingComponents": {
+    "showmodal":"/components/paycode/index",
+    "withhol":"/components/withhol/index",
+    "roomlist":"/components/roomlist/index",
+    "sign":"/components/sign/sign"
+  }
+}

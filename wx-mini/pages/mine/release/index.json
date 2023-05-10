@@ -1,0 +1,6 @@
+{
+  "usingComponents": {   
+    "withhol":"/components/withhol/index",
+    "sign":"/components/sign/sign"
+  }
+}

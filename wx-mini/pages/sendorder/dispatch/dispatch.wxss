@@ -1,0 +1,9 @@
+/* pages/sendorder/dispatch/dispatch.wxss */
+.card {
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: black;
+  line-height: 65rpx;
+}

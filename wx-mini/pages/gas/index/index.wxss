@@ -1,0 +1,28 @@
+/* pages/gas/index/index.wxss */
+
+.tab{
+    width: 100%;
+    margin: 0 auto;
+    line-height: 60prx;
+    /* border: #eee solid 1px; */
+    border-radius: 6rpx;
+  }
+  .active{
+    border: var(--primary-color) solid 1px;
+    /* background-color: var(--primary-color); */
+    color: var(--primary-color);
+  }
+
+  .box-dialog{
+      position: absolute;
+      top:0;
+      left: 0;
+  }
+  
+  .Fixed{
+    position: fixed;
+    bottom: 0rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+  }

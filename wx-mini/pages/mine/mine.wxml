@@ -1,0 +1,167 @@
+<!--pages/mine/mine.wxml-->
+<!-- <wxs module="filters" src="../../util/filter.wxs"></wxs> -->
+<view class="container bg-F8">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="">
+    <view class="flex-col  mg-tb-15">
+      <view class="flex-col-6 tx-ct">
+        <view class='userAvtor'>
+          <image src="{{userInfo.avatarUrl}}" alt="" wx:if="{{isLogin}}" />
+          <view class="iconfont icon-weidenglu-touxiang" wx:if="{{!isLogin}}"></view>
+        </view>
+      </view>
+      <view class="flex-col-18">
+        <view wx:if="{{isLogin}}">{{userInfo.nickName}}</view>
+        <view class="handleLogin" wx:if="{{!isLogin}}" bindtap="handleLogin">登录</view>
+      </view>
+    </view>
+    <view class="pd-lr-15 mg-tp-20 ft-se-15" style="font-weight: 700;">我的账户</view>
+    <view class="primary-card" >
+      <view>
+        <view class="row pd-tb-15" wx:if="{{!show}}" style="border-top:#FFF solid 0px">
+          <view class="tips">
+            <text>您尚未绑定银行卡</text>
+            <button class="bind-btn" bindtap="Certification">立即绑定</button>
+          </view>
+        </view>
+
+        <view class="row" wx:if="{{show}}" style="margin-bottom:70rpx" data-value="{{info}}" bindtap="handleTowallet">
+          <view class="money-card">
+            <view class="cardno mg-bt-5 flex-col">
+              <text class="iconfont icon-gonghang- icon-icbc" style="color: #FFF"></text>
+              <text class="ft-se-14">{{info.bind_card_type == '0' ?'工商银行卡':'工商银行电子账户'}}</text>
+            </view>
+            <view style="font-size:48rpx;">
+               {{info.bind_card_type == '0'? info.bind_card_tail:info.medium_id_tail }}
+            </view>
+            <view class="flex-col ft-se-14" wx:if="{{info.bind_card_type !== '0'}}">
+              {{info.medium_id_tail? '绑定卡 '+info.bank_name +'  '+ info.bind_card_tail : ""}}
+            </view>
+            <view class="flex-col ft-se-14">
+              <view class=""> 余额：{{money ? money + '元' : '0.00'}} </view>
+              <text class="iconfont  {{ !moneyShow ? 'icon-yanjing':'icon-chakan'}}" style=" color:#FFF; font-size:30rpx; margin-left:30rpx"
+              catchtap="handleLook"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="flex-col mg-tp-10 tab-bt" wx:if="{{show}}" > 
+        <view class="flex-col flex-col-8 tx-ct bd-rt" catchtap="handleCard">
+          <text class="cuIcon-card lg text-gray mg-lr-10"
+            style=" color:#FFF; font-size:40rpx;"></text>
+           <text class="ft-se-14">更换银行卡</text> 
+        </view>
+        <view class="flex-col flex-col-8 tx-ct bd-rt" catchtap="handleCardNo"> 
+          <text class="cuIcon-attention lg text-gray mg-lr-10"
+            style=" color:#FFF; font-size:36rpx; "></text>
+            <text class="ft-se-14">查看卡号</text> 
+        </view>
+     
+         <view class="flex-col flex-col-8 tx-ct" catchtap="handleUnbind"> 
+          <text class="iconfont icon-jiebang lg text-gray mg-lr-10"  style=" color:#FFF; font-size:36rpx; "></text>
+          <text class="ft-se-14">解绑交费卡</text> 
+          
+        </view> 
+      </view>
+
+    </view>
+  </view>
+
+  <!-- <view class="card">
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-8 tx-ct mg-bt-30"  bindtap="handleHouse">
+        <view class="iconfont icon-fangwufangchan ft-se-32"></view>
+        <view>房屋信息</view>
+      </view>
+
+      <view class="flex-col-8 tx-ct mg-bt-30" bindtap="handleRepair">
+        <view class="iconfont icon-baoxiu ft-se-32"></view>
+        <view>报事报修</view>
+      </view>
+
+      <view class="flex-col-8 tx-ct mg-bt-30" bindtap="handleComplain">
+        <view class="iconfont icon-tousujianyi ft-se-32"></view>
+        <view>投诉建议</view>
+      </view>
+ 
+      <view class="flex-col-8 tx-ct mg-bt-30" bindtap="handleNotice">
+        <view class="iconfont icon-tongzhi ft-se-32"></view>
+        <view>通知公告</view>
+      </view>
+      <view class="flex-col-8 tx-ct mg-bt-30" bindtap="handleRelease" wx:if="{{withJson}}">
+        <view class="iconfont icon-piliangdaikou ft-se-32"></view>
+        <view>代扣管理</view>
+      </view>
+      <view class="flex-col-8 tx-ct mg-bt-30" bindtap="handleFAQ">
+        <view class="iconfont icon-changjianwenti ft-se-32"></view>
+        <view>常见问题</view>
+      </view>
+     
+    </view>
+  </view> -->
+
+<view class="mg-tp-15">
+    <view class="item flex-col" bindtap="handleHouse">
+      <!-- <view class="iconfont icon-fangwufangchan "></view> -->
+      <image src="../../img/icon/fwxx.png"  class="mg-rt-15" style="width: 25px; height:25px;"></image>
+      <view>房屋信息</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+    <view class="item flex-col" bindtap="handleRecords">
+      <!-- <view class="iconfont icon-jilu "></view> -->
+      <image src="../../img/icon/jyjl.png"  class="mg-rt-15" style="width: 25px; height: 25px;"></image>
+      <view>交易记录</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+
+    <!-- <view class="item flex-col" bindtap="handleRepair">
+      <view class="iconfont icon-baoxiu"></view>
+      <view> 报事报修</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+    <view class="item flex-col" bindtap="handleComplain">
+      <view class="iconfont icon-tousujianyi"></view>
+      <view>投诉建议</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view> -->
+    <!-- <view class="item flex-col" bindtap="handleNotice">
+      <view class="iconfont icon-tongzhi"></view>
+      <view>通知公告</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view> -->
+
+    <view class="item flex-col" bindtap="handleRelease" wx:if="{{withJson}}">
+      <!-- class="iconfont icon-piliangdaikou" -->
+      <image src="../../img/icon/dkgl.png"  class="mg-rt-15" style="width: 25px; height: 25px;"></image>
+      <view>代扣管理</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+    <view class="item flex-col" bindtap="handleFAQ">
+      <!-- <view class="iconfont icon-changjianwenti"></view> -->
+      <!-- <image class="mg-rt-15" src="../../img/cjwt.png" style="width: 20px; height:20px;"></image> -->
+      <image class="mg-rt-15" src="../../img/icon/cjwt.png" style="width: 25px; height: 25px;"></image>
+      <view>常见问题 </view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+    <!-- wx:if="{{root == '1' || root == '2'}}" -->
+    <view class="item flex-col" bindtap="handleProperty" wx:if="{{root == '1' || root == '2'}}">
+      <!-- <view class="iconfont icon-changjianwenti"> <image src="../../img/wygl.png"></image></view> -->
+      <image class="mg-rt-15" src="../../img/icon/wygl.png" style="width: 25px; height: 25px;"></image>
+      <view> 物业入口</view>
+      <text class="cuIcon-right lg text-gray inline"></text>
+    </view>
+  </view> 
+
+  <showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' bind:code='sendcode' phone="{{info.user_phone_no}}"
+    width="85%" title="信息验证">
+  </showmodal>
+  <logo class="logo" bind:accredit="handleAccredit" title="授权"></logo>
+</view>
+
+<unbind class='unbind' bind:unbindCancel="unbindCancel" bind:unbindConfirm='unbindConfirm' phone="{{info.user_phone_no}}"></unbind>
+
+<unbindmodal class='unbindmodal' bind:unbindmodalCancel="unbindmodalCancel" bind:unbindmodalConfirm='unbindmodalConfirm'></unbindmodal>
+

@@ -1,0 +1,26 @@
+<!--pages/repair/index/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <view class="tx-ct mg-tp-15 card">
+    <view class="flex-col-24 mg-bt-10 tx-lt p-title">报修</view>
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-12  bg-w" bindtap="Sendorder" >
+        <view class="background size">
+          <view class="iconfont icon-yunliankeji-"></view>
+        </view>
+        <view class="title_text">报修派单</view>
+      </view>
+
+      <view class="flex-col-12  bg-w" bindtap="Processorder">
+        <view class="background size">
+          <view class="iconfont icon-chuli"></view>
+        </view>
+        <view class="title_text">报修处理</view>
+      </view>
+    </view>
+  </view>
+
+</view>

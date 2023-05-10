@@ -1,0 +1,19 @@
+<!--components/showmodal-input/index.wxml-->
+<view wx:if='{{show}}'>
+  <view class='mask_layer' bindtap='modal_click_Hidden' />
+  <view class='modal_box' style="width:{{width}}">
+    <view class="title tx-ct ft-se-16">
+      解绑说明 
+      <!-- <image class="close" bindtap='cancel' src="./img/close.png"></image> -->
+    </view>
+    <view class='content'>
+      <view class="row pd-15 li-hg-24">
+        解绑后，系统会立即解除您的银行卡和彩云居家的绑定关系，如果您的账户是中国工商银行电子账户，则无法注销您的电子账户，如果需要注销，请前往工商银行手机银行或者柜面办理。如需再次交费，需要您重新绑定银行卡或恢复原绑定银行卡信息
+      </view>
+    </view>
+    <view class='btn1'>
+      <view bindtap='cancel' class='cancel'>取消</view>
+      <view bindtap='confirm' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>

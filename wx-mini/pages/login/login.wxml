@@ -1,0 +1,35 @@
+<!--pages/login/login.wxml-->
+<view class="container login-container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <!-- <view style="width: 100%;height: 100%;position: absolute;left: 0;top: 0; background-color: rgba(0,0,0,.3);"></view> -->
+  <form class="login-form">
+    <view class="row">
+      <view class="login-item">
+        <view class="item-col item-input">
+          <input placeholder="手机号码" placeholder-class="phcolor" type="number" data-obj="form.phone"
+            value="{{form.phone}}" disabled="{{isDisabled}}" bindinput="inputChange"></input>
+        </view>
+      </view>
+      <view class="login-item mg-tp-15">
+        <view class="item-col item-input">
+          <input placeholder="请输入验证码" placeholder-class="phcolor" type="number" data-obj="form.smsCode"
+            value="{{form.smsCode}}" bindinput="inputChange"></input>
+        </view>
+        <view class="item-col item-code">
+          <button bindtap='sendcode' style="background:none" disabled='{{btnDisabled}}'>{{btnValue}}</button>
+        </view>
+      </view>
+    </view>
+
+    <view class='row mg-tp-50 tx-ct'>
+      <button class="login-btn" bindtap="submit">登录</button>
+    </view>
+
+  </form>
+  <logo class="logo" bindconfirm="confirm"></logo>
+  <!-- <logo class="logo" bind:userInfo="getUserInfo"></logo> -->
+  <info class="info"></info>
+</view>

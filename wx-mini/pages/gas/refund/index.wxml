@@ -1,0 +1,55 @@
+<!--pages/gas/refund/index.wxml-->
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+<view class="container  {{show? 'Fixed':''}}">
+    <view class='copy'>
+        <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+    </view>
+
+    <view class="row">
+
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx">
+            <view class=" row  tx-lt pd-tb-20 ">
+                <view class="ft-se-16 tx-lt">
+                   剩余应还金额（元）
+                </view>
+                <view class=" ft-se-18 ft-bd tx-lt mg-tp-10">
+                   {{amountDue ? amountDue: '0.00'}}
+                </view>
+                <view class=" ft-se-14 tx-lt mg-tp-5">
+                    <view class="flex-col-24 tx-rt mg-tp-10">
+                        <text class="tag" bindtap="handlePayAll" wx:if="{{list.length !== 0}}">全部还款</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+       
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx" wx:if="{{list.length !== 0}}">
+            <view class="ft-se-16" >还款明细</view>
+            <view class="mg-tp-15 bd-bt ft-se-14" wx:for="{{list}}" wx:key="index" bindtap="handlePay" data-value="{{item}}" data-index="{{index}}" >
+                <view class="flex-col">
+                    <view class="flex-col-10">{{index+1}}/{{list.length}}期</view>
+                    <view class="flex-col-14 tx-rt">
+                        {{item.amount}} 
+                        <text class="cuIcon-right lg text-gray inline"></text>
+                    </view>
+                </view>
+                <view class="flex-col">
+                    <view class="flex-col-10">还款日{{item.dueDate}}</view>
+                    <view class="flex-col-14 tx-rt">
+                        <text wx:if="{{item.ifPay && !item.ifWithin}}">已还款</text>
+                        <text wx:if="{{!item.ifPay && !item.ifWithin}}">待还款</text>
+                        <text wx:if="{{!item.ifPay && item.ifWithin}}">已逾期</text>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+
+
+</view>
+
+<showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' phone="{{phone}}" width="85%" title="短信验证">
+</showmodal>

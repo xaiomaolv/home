@@ -1,0 +1,85 @@
+<view class="container  {{show? 'Fixed':''}}">
+    <view class='copy'>
+        <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+    </view>
+
+    <view class="row">
+        <view class="flex-col flex-wrap mg-tb-15 bd-bt pd-lr-10">
+            <view class="flex-col-8 tx-ct li-hg-36" wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab">
+                <view class="tab {{currentTab == index ? 'active' : ''}}">{{item.title}}</view>
+            </view>
+        </view>
+
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx">
+
+            <view class=" row  tx-lt pd-tb-20 ">
+                <view class=" ft-se-16 tx-lt">
+                    分期剩余应还金额（元）
+                </view>
+                <view class=" ft-se-18 ft-bd tx-lt mg-tp-10">
+                    300.09
+                </view>
+                <view class=" ft-se-14 tx-lt mg-tp-5">
+                    还款日2月8日，设置自动还款
+                </view>
+            </view>
+
+            <view class='row mg-20 tx-ct'>
+                <button class="submit-btn primary btn-block" bindtap="handlePay">提前结清</button>
+            </view>
+
+            <view class=" row  tx-lt pd-tb-20 ">
+                <view class="flex-col flex-col-item mg-bt-10">
+                    <view class="flex-col-6">累计消费</view>
+                    <view class="flex-col-18 tx-rt">
+                        <view class="" bindtap="handleMoney">109 <text class="iconfont {{moneyShow? 'icon-xiangshang':'icon-xiangyou'}} "></text></view>
+                    </view>
+                </view>
+                
+                
+                <view class="flex-col mg-bt-10">
+                    <view class="flex-col-12">已退款</view>
+                    <view class="flex-col-12 tx-rt" bindtap="handleStage">90 <text class="iconfont {{stageShow? 'icon-xiangshang':'icon-xiangyou' }} "></text></view>
+                </view>
+               
+
+                <view class="flex-col mg-bt-10">
+                    <view class="flex-col-12">已还款</view>
+                    <view class="flex-col-12 tx-rt" bindtap="handleStage">0.00 <text class="iconfont {{stageShow? 'icon-xiangshang':'icon-xiangyou' }} "></text></view>
+                </view>
+                
+
+                <view class="flex-col mg-bt-10 bd-tp mg-tp-10 pd-tp-10">
+                    <view class="">统计周期：2022年01月1日-01月31日</view>
+                    <view class="">出账还款日：2022年01月1日出账，最后还款日01月31日</view>
+                </view>
+
+            </view>
+
+
+        </view>
+
+
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx">
+            <view class="flex-col flex-col-item">
+                <view class="flex-col-6">未入账</view>
+                <view class="flex-col-18 tx-rt">
+                    <view class="" bindtap="handleMoney">信用先享订单<text class="iconfont {{moneyShow? 'icon-xiangshang':'icon-xiangyou'}} "></text></view>
+                </view>
+            </view>
+            
+
+            <view class="flex-col flex-col-item mg-tp-20">
+                <view class="flex-col-6">全部待还</view>
+                <view class="flex-col-18 tx-rt">
+                    <view class="" bindtap="handleMoney">所有未结算账单 <text class="iconfont {{moneyShow? 'icon-xiangshang':'icon-xiangyou'}} "></text></view>
+                </view>
+            </view>
+           
+        </view>
+    </view>
+
+
+
+
+</view>

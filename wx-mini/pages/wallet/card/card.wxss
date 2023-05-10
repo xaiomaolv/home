@@ -1,0 +1,9 @@
+/* pages/wallet/card/card.wxss */
+.primary-card{
+  position: relative;
+}
+.more{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}

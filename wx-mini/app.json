@@ -1,0 +1,112 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/gas/index/index",
+        "pages/payment/index/index",
+        "pages/gas/detail/detail",
+        "pages/property/index/index",
+        "pages/login/login",
+        "pages/announce/index",
+        "pages/payment/index",
+        "pages/notice/index",
+        "pages/repair/index",
+        "pages/bind/bind",
+        "pages/house/house",
+        "pages/house/map/map",
+        "pages/house/familytenants/familytenants",
+        "pages/house/familylist/familylist",
+        "pages/payment/pay/pay",
+        "pages/repair/repairform/repairform",
+        "pages/notice/detail/detail",
+        "pages/complain/complain",
+        "pages/mine/mine",
+        "pages/mine/houseinfo/houseinfo",
+        "pages/mine/amendphone/index",
+        "pages/mine/FAQ/index",
+        "pages/mine/FAQ/detail/detail",
+        "pages/mine/wallet/wallet",
+        "pages/mine/houseinfo/detail/detail",
+        "pages/mine/bankcard/index",
+        "pages/complain/add/add",
+        "pages/property/property",
+        "pages/property/pay/pay",
+        "pages/reminder/reminder",
+        "pages/sendorder/sendorder",
+        "pages/sendorder/dispatch/dispatch",
+        "pages/processorder/processorder",
+        "pages/repair/index/index",
+        "pages/waterbill/index/index",
+        "pages/waterbill/add/add",
+        "pages/waterbill/pay/pay",
+        "pages/electrybill/index/index",
+        "pages/electrybill/add/add",
+        "pages/electrybill/pay/pay",
+        "pages/gasbill/index/index",
+        "pages/gasbill/add/add",
+        "pages/gasbill/pay/pay",
+        "pages/Oilcard/index/index",
+        "pages/Oilcard/add/add",
+        "pages/Oilcard/pay/pay",
+        "pages/waterbill/records/records",
+        "pages/electrybill/records/records",
+        "pages/gasbill/records/records",
+        "pages/Oilcard/records/records",
+        "pages/repair/appraise/appraise",
+        "pages/wallet/index/index",
+        "pages/wallet/card/card",
+        "pages/wallet/recharge/recharge",
+        "pages/wallet/cash/cash",
+        "pages/wallet/detail/detail",
+        "pages/wallet/add/add",
+        "pages/house/familylist/amend/amend",
+        "pages/park/index",
+        "pages/deposit/index",
+        "pages/records/records",
+        "pages/commonUse/index",
+        "pages/properstate/index",
+        "pages/wallettransDetail/transDetail",
+        "pages/walletrecord/record",
+        "pages/mine/release/index",
+        "pages/property/stopcar/index",
+        "pages/gas/refund/index",
+        "pages/gas/single/index",
+        "pages/property/deatil/detail",
+        "pages/gas/list/list",
+        "pages/webview/webview"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fd7380",
+        "navigationBarTitleText": "彩云居家",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "用于定位您当前所属的市区位置"
+        }
+    },
+    "requiredPrivateInfos":[
+      "getLocation"
+    ],
+    "tabBar": {
+        "color": "#8a8a8a",
+        "selectedColor": "#fd7380",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "img/home.png",
+                "iconPath": "img/home-a.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "selectedIconPath": "img/mine.png",
+                "iconPath": "img/mine-a.png",
+                "pagePath": "pages/mine/mine",
+                "text": "我的"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

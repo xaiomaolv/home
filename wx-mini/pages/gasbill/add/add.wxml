@@ -1,0 +1,49 @@
+<!--pages/waterbill/add/add.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row pd-15">
+    <view class="flex-col flex-col-12 tx-lt">
+      <view class="iconfont icon-keranqiti" style="font-size:56rpx; color:var(--primary-color)"></view>
+      <view>燃气费 </view>
+    </view>
+    <view class="flex-col-12 tx-ct">
+
+    </view>
+  </view>
+  <view class="row">
+    <view class="card">
+      <view class="flex-col flex-col-24">
+        <form action="" class="row">
+          <view class="row">
+            <view class="row">交费单位</view>
+            <view class="row  pd-tb-15 bd-bt">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="name">
+                <view class="picker">
+                  {{index ? array[index].name : '请选择交费单位'}}
+                  <text class="cuIcon-right lg text-gray inline"></text>
+                </view>
+             
+              </picker>
+            </view>
+          </view>
+
+          <view class="row" style='margin-top:60rpx'>
+            <view class="">交费户号</view>
+            <view class="pd-tb-15 bd-bt">
+              <input placeholder="请输入交费户号" type="number" data-obj="form.phone" value="{{form.phone}}" placeholder-class="placeholder-color" bindinput="inputChange"></input>
+            </view>
+          </view>
+
+        </form>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class='row mg-20 tx-ct'>
+    <button type="primary" class="row primary" bindtap="handlePay">立即交费</button>
+  </view>
+</view>

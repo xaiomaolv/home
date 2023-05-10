@@ -1,0 +1,62 @@
+<!--pages/mine/FAQ/detail/detail.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row" wx:if="{{form.id == 0}}">
+    <view class="row bg-w  pd-15">
+      <text class="row title" style="font-size:36rpx;">什么是电子账户？</text>
+      <text class="row mg-tp-10 cp" style="color:#5088ff;">工商银行云南省分行</text>
+    </view>
+    <view class="row bg-w mg-tp-15 pd-15">
+      <text class="content tx-jt">
+        1.工行电子账户：指工商银行接受客户申请，通过工商银行指定渠道为客户开立的，可依托工商银行网络渠道或者第三方合作渠道向客户提供相关金融服务的专用银行账号，含电子账户(二类)与电子账户(三类)。\n2.电子账户也是银行账户。按《中国人民银行关于改进个人银行账户服务加强账户管理的通知》规定，个人借记卡账户分一类、二类、三类，其中一类账户是实体账户，必须在银行网点开立；二类/三类属于电子账户，可以线上开立，且必须至少绑定一张银行一类账户才能使用。二类账户单日消费限额为1万，年限额20万。彩云居家注册时如果绑定的是非工行卡，开立的就是二类电子账户，支持农/中/建/交/邮储银行的一类账户借记卡。您可从一类账户向电子账户充值，或从电子账户向一类账户提现。我行电子账户可以开通工行手机银行，可以购买我行理财产品，也可绑定微信或支付宝用于消费支付。
+      </text>
+    </view>
+  </view>
+
+  <view class="row" wx:if="{{form.id == 1}}">
+    <view class="row bg-w  pd-15">
+      <text class="row title" style="font-size:36rpx;">注册时开立电子账户失败是什么原因?</text>
+      <text class="row mg-tp-10 cp" style="color:#5088ff;">工商银行云南省分行</text>
+    </view>
+    <view class="row bg-w mg-tp-15 pd-15">
+      <text class="content tx-jt">
+        彩云居家注册时首先 必须绑定一张银行借记卡。如何您输入的是农行/建行/中行/交行/邮储银行的借记卡（储蓄卡）卡号，需要您上传身份证正反面，输入您在发卡行预留的手机号，系统将通过银联去核实您的姓名/卡号/身份证号/手机号是否一致，这叫“银联验签”。验签通过后将为您开通一个工行二类电子账户（我们也称为钱包账户）。当出现“银联验签失败”提示时，一般是您在发卡行预留的手机号不对，可以去发卡行柜台确认修改，或者您换一张其它银行储蓄卡试试，当然我们推荐您使用工行卡直接绑定，就无需开电子账户了。
+      </text>
+    </view>
+  </view>
+  <view class="row" wx:if="{{form.id == 2}}">
+    <view class="row bg-w  pd-15">
+      <text class="row title" style="font-size:36rpx;">用电子账户交费失败怎么办?</text>
+      <text class="row mg-tp-10 cp" style="color:#5088ff;">工商银行云南省分行</text>
+    </view>
+    <view class="row bg-w mg-tp-15 pd-15">
+      <text class="content tx-jt">
+        交费是从绑定的工行卡或工行电子账户向学校转账。当电子账户余额不足时，交费就失败。从绑定的非工行卡向工行电子账户充值有可能受发卡行限制，有的银行限额单次2000元~1万元，有的银行会彻底关闭充值通道，各个地州不一样。解决的办法是降低单次充值金额为2000元以下，或通过发卡行渠道（手机银行/自助设备/柜面）向工行电子账户转账。更简便的办法是办理工行卡，更改交费账户为工行卡，直接从工行卡转账交费。您可以通过“我的—查看卡号”获得工行电子账户的完整账号，用于转账操作。要注意的是“转账”必须是从电子账户绑定的那张储蓄卡转出，非绑定卡转出的资金不能入账。
+      </text>
+    </view>
+  </view>
+  <view class="row" wx:if="{{form.id == 3}}">
+    <view class="row bg-w  pd-15">
+      <text class="row title" style="font-size:36rpx;">如何提取电子账户上的资金？</text>
+      <text class="row mg-tp-10 cp" style="color:#5088ff;">工商银行云南省分行</text>
+    </view>
+    <view class="row bg-w mg-tp-15 pd-15">
+      <text class="content tx-jt">
+        用电子账户账号可以登陆工行手机银行，如果您尚未使用工行手机银行，我们建议您在任何APP应用商店中搜索“中国工商银行”下载安装。您可以在工行手机银行上看到其余额以及绑定的一类卡，并购买工行理财，享受更多工行服务。您在工行电子账户的多余资金可以通过“提现”功能转出到绑定的那张非工行卡上。
+      </text>
+    </view>
+  </view>
+  <view class="row" wx:if="{{form.id == 4}}">
+    <view class="row bg-w  pd-15">
+      <text class="row title" style="font-size:36rpx;">电子账户上的资金还可以怎么用？</text>
+      <text class="row mg-tp-10 cp" style="color:#5088ff;">工商银行云南省分行</text>
+    </view>
+    <view class="row bg-w mg-tp-15 pd-15">
+      <text class="content tx-jt">
+        电子账户可以登录工行手机银行，购买工行理财产品，享受工行服务；您可以去工行网点领取电子账户实体卡；您可以用电子账户绑定微信或支付宝账户用于线上消费。在网点领取的二类账户实体卡可以支取现金，可以用于购买理财及消费，或向绑定的一类卡充值/提现。二类电子账户单日消费限额1万元，年累计消费限额20万元；转入转出到绑定卡不受限制。
+      </text>
+    </view>
+  </view>
+</view>

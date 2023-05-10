@@ -1,0 +1,30 @@
+<!--pages/house/familylist/amend/amend.wxml-->
+<!--pages/house/family-tenants/family-tenants.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row">
+    <view class="cell mg-tp-15">
+      <view class="cell-col cell-title">姓名</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入姓名" type="text" data-obj="form.nickName" value="{{form.nickName}}"
+          disabled="{{isDisabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+   
+    <view class="cell">
+      <view class="cell-col cell-title">联系电话</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入联系电话" type="number" data-obj="form.phone" value="{{form.phone}}"
+          disabled="{{isDisabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='row mg-tp-30 tx-ct'>
+    <button type="primary" class="cell-primary" bindtap="handleRepair">修改</button>
+  </view>
+</view>
+

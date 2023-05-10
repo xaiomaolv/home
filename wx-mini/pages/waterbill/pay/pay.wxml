@@ -1,0 +1,78 @@
+<!--pages/waterbill/pay/pay.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <view class="row">
+    <view class="card">
+      <view class="icon">
+        <view class="iconfont icon-shuifei" style="font-size:56rpx;"></view>
+      </view>
+      <view class="row">
+        <form action="" class="row">
+          <view class="row flex-col pd-tb-15 bd-bt">
+            <view class="flex-col-8">余额</view>
+            <view class="flex-col-16">
+              1128.05元
+            </view>
+          </view>
+          <view class="mg-tp-30" style="line-height:56rpx">
+            <view class="row flex-col">
+              <view class="flex-col-8">交费户名</view>
+              <view class="flex-col-16">
+                刘**
+              </view>
+            </view>
+            <view class="row flex-col">
+              <view class="flex-col-8">交费户号</view>
+              <view class="flex-col-16">
+                408123419
+              </view>
+            </view>
+            <view class="row flex-col">
+              <view class="flex-col-8">交费单位</view>
+              <view class="flex-col-16">
+                昆明市通用水务局
+              </view>
+            </view>
+            <view class="row flex-col flex-col-item">
+              <view class="flex-col-8">地址</view>
+              <view class="flex-col-16">
+                云南省昆明市五华区高新区茭菱路经典双城A区6栋一单元1011室
+              </view>
+            </view>
+            <view class="row flex-col">
+              <view class="flex-col-8">账期</view>
+              <view class="flex-col-16">
+                202103
+              </view>
+            </view>
+            <view class="row" style='margin-top:60rpx'>
+              <view class="">输入金额</view>
+              <view class="pd-tb-15 bd-bt">
+                <view class="yuan">￥</view>
+                <input class="pd-lt-30 money" placeholder="请输入金额" type="digit" data-obj="form.money" value="{{form.money}}"
+                  placeholder-class="placeholder-color" bindinput="handelInputChange"></input>
+              </view>
+
+              <view class="row flex-col flex-wrap mg-tp-15">
+                <view class="flex-col-6 tx-ct" wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab">
+                  <view class="tab {{currentTab == index ? 'active' : ''}}">{{item.value}}元</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </form>
+      </view>
+    </view>
+  </view>
+
+  <view class='row mg-20 tx-ct'>
+    <button type="primary" class="row primary" bindtap="handlePay">立即交费</button>
+  </view>
+
+  <view class="row flex-col mg-tp-15">
+    <view class="flex-col-24 tx-ct" bindtap="handleRecords">交费记录</view>
+  </view>
+</view>

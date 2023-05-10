@@ -1,0 +1,52 @@
+<!--pages/payment/index/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="my-pay">我的交费</view>
+  <view class="card" wx:if="{{houseList.length == 0}}">
+    <view class="flex-col-24 pd-tb-15">
+      <view class="tx-ct">暂无交费事项</view>
+    </view>
+  </view>
+
+
+  <view class="row flex-col flex-wrap tx-ct">
+    <view wx:for="{{houseList}}" wx:key="item" class="flex-row flex-col-24 card1 card-bg" data-value="{{item}}">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">{{item.roomNum}}</view>
+        <view class="flex-col-6 tx-rt" data-value="{{item}}">
+          <button class="pay-btn " data-value="{{item}}" bindtap="paySingleList">交费历史</button>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+      <view class="flex-col flex-col-24" data-value="{{item}}" bindtap="paySingBill">
+        <view class="flex-col-20 tx-lt">【{{item.community.communityName}}】{{item.floor.name}} {{item.unit.unitNum}}单元
+          {{item.roomNum}}室</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </view>
+  <view class="tx-ct mg-tp-15 primary-card">
+    <view class="flex-col-24 mg-bt-10 tx-lt p-title" style="color:#FFF">交费</view>
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-12" bindtap="Bindhouse">
+        <view class=" background size ">
+          <view class="iconfont icon-fangwufangchan">
+          </view>
+        </view>
+        <view class="title_text">绑定房产</view>
+      </view>
+
+      <view class="flex-col-12" bindtap="Paylist">
+        <view class=" background size ">
+          <view class="iconfont icon-weibiaoti--">
+          </view>
+        </view>
+        <view class="title_text" >交费详情</view>
+      </view>
+    </view>
+  </view>
+
+</view>

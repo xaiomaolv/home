@@ -1,0 +1,16 @@
+/* pages/repair/detail/detail.wxss */
+.card {
+  /* background-color: var(--primary-color); */
+  background-color: #FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #484848;
+  line-height: 56rpx;
+}
+.orderInfo-item{
+  line-height: 58rpx;
+}
+.pd-15{
+  padding: 30rpx;
+}

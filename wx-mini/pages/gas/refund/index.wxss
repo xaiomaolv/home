@@ -1,0 +1,9 @@
+/* pages/gas/refund/index.wxss */
+
+.tag{
+    padding: 0px 5px;
+    border:#fb4e44  solid 1px ;
+    color:#fb4e44;
+    padding: 10rpx 20rpx;
+    border-radius: 8rpx;
+  }

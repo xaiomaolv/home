@@ -1,0 +1,6 @@
+/* pages/repair/appraise/appraise.wxss */
+
+.stars{
+	width: 600rpx;
+	margin: 0 auto;
+}

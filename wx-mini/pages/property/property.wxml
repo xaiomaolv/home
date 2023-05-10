@@ -1,0 +1,221 @@
+<!--pages/property/property.wxml-->
+<view class="menu_box">
+ <text class='menu1 {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">我的交费单</text>
+ <text class='menu2 {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">自主交费</text>
+</view>
+<view class="tab1" hidden="{{menuTapCurrent!='0'}}">
+  <view class="container {{show? 'indexFixed':''}}">
+  <!-- <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view> -->
+
+  <view class="row">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="mg-tp-15 pd-15 card" wx:for="{{list}}" wx:key="index" data-value="{{item}}" style="line-height:56rpx">
+        <view class="icon">
+          <view class="iconfont icon-wuyefeiyongchuzhang" style="font-size:36rpx;"></view>
+        </view>
+        <view class=" row  tx-lt">
+          <view class="flex-col-24 tx-rt">
+            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+          </view>
+
+          <view class="flex-col-24 tx-lt">
+            <view class="row flex-col pd-tp-15 ">
+              <view class="flex-col-8">欠费金额</view>
+              <view class="flex-col-16 flex-col">       
+                <view class="flex-col-12">  {{item.totalBill? item.totalBill + '元' : ''}}</view>
+                <view class="flex-col-12 tx-rt" wx:if="{{item.num}}">共 <text class="color">{{item.num}}</text> 笔</view>
+              </view>
+            </view>
+            <view class="row flex-col">
+              <view class="flex-col-8">交费户名</view>
+              <view class="flex-col-16">
+                {{item.room.owner.ownerName}}
+              </view>
+            </view>
+            <!-- <view class="row flex-col">
+              <view class="flex-col-8">交费单位</view>
+              <view class="flex-col-16">
+                {{item.room.community.communityName ? item.room.community.communityName : ''}}
+              </view>
+            </view> -->
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">地址</view>
+              <view class="flex-col-16">
+                {{item.room.community.communityName}}{{item.room.floor.name ? item.room.floor.name : '' }}{{item.room.unit.unitNum ? '-' + item.room.unit.unitNum : '' }}{{item.room.roomNum ? '-' + item.room.roomNum : '' }}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">交费标题</view>
+              <view class="flex-col-16">
+                {{item.payTitle}}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">交费类目</view>
+              <view class="flex-col-16">
+                {{item.category.categoryName}}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">账单区间</view>
+              <view class="flex-col-16">
+                {{item.intervalStart? item.intervalStart: ''}} {{item.intervalStart || item.intervalEnd ? '至': ''}}
+                {{item.intervalEnd? item.intervalEnd: ''}}
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="bd-tp flex-col mg-tp-10 pd-tp-10" bindtap="handleDeatil" data-value="{{item}}">
+        <view class="flex-col-16" style="color: red;">查看详情</view>
+        <view class="flex-col-8 tx-rt">
+          <text class="cuIcon-right lg text-gray inline"></text>
+        </view>     
+      </view>
+      </view>
+    </checkbox-group>
+    <view class="mg-tp-15  card " wx:if="{{list.length == 0}}">
+      <view class="flex-col-24 tx-ct pd-tb-20">
+        暂无需交的物业费
+      </view>
+    </view>
+
+    <view class="tx-ct " wx:if="{{list.length !== 0}}">
+      <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2" style="font-size:48rpx;"></text>没有更多了...</text>
+      <!-- <text wx:if="{{!showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>加载更多...</text> -->
+    </view>
+
+    <view class="row flex-col mg-tp-10 {{!showPageNext? 'mg-tp-30':''}}">
+      <view class="flex-col-24 tx-ct" bindtap="handleRecords">交费记录</view>
+    </view>
+
+
+
+  </view>
+
+
+  <view class="row  fixed-bottom" style="z-index: 999;" wx:if="{{list.length !== 0}}">
+    <!-- <view class="mg-tp-15 pd-lr-10">
+      <view class="tx-lt row" style="color:var(--primary-color)">
+        <view class="tx-lt ro wmg-tp-5" data-value="{{agreementList[0]}}" bindtap="handleAgreement">
+          {{agreementList[0].title}}</view>
+      </view>
+    </view> -->
+
+
+    
+    <view class="flex-col bg-w mg-tp-20">
+      <view class="flex-col-6 pd-tb-20 pd-lt-15">
+        <checkbox bindtap="selectall" value="{{selectAll}}" checked="{{selectAll}}" />
+      </view>
+      <view class="flex-col-12 pd-rt-10 flex-col">
+        <view class="flex-col-24 pd-tb-20">
+          合计：{{total? total + '元': '0.00'}}
+        </view>
+      </view>
+      <view class="flex-col-6 tx-ct ">
+        <button class="row tx-ct account" bindtap="handlePay">立即交费</button>
+      </view>
+    </view>
+
+  </view>
+</view>
+</view>
+<view class="tab2" hidden="{{menuTapCurrent!='1'}}">
+  <view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <view>
+    <form>
+      <view class="row mg-tp-15">
+        <view class="cell">
+          <view class="cell-col cell-title">房屋</view>
+        <view class="cell-col cell-input">
+          <picker bindchange="bindCommunityChange" value="{{communityIndex}}" range="{{communityArray}}"
+            range-key="name">
+            <view class="picker">
+              {{communityIndex?communityArray[communityIndex].name:'请选择房屋'}}
+            </view>
+          </picker>
+        </view>
+        </view>
+        <view class="cell">
+          <view class="cell-col cell-title">缴费类目</view>
+          <view class="cell-col cell-input">
+            <picker bindchange="bindPickerChange"  value="{{index}}" range="{{array}}" range-key="categoryName">
+              <view class="picker">
+                {{index ? array[index].categoryName : '请选择'}}
+              </view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="cell">
+          <view class="cell-col cell-title">账单区间</view>
+        <view class="cell-col cell-input tx-rt">        
+           <view class="cell-box">
+            <picker mode="date" data-obj="form.intervalEnd"  start="{{form.intervalStart}}"  bindchange="bindDateChange">
+           <view class="picker">
+            {{form.intervalEnd  ? form.intervalEnd : '请选择'}}
+            </view>
+           </picker>
+           </view>
+           <view class="cell-box">
+             <picker mode="date" data-obj="form.intervalStart"  start="2020-01-01"  bindchange="bindDateChange">
+           <view class="picker">
+            {{form.intervalStart ? form.intervalStart : '请选择'}} -
+            </view>
+           </picker>
+        </view>
+        </view>
+        <!-- <view class="cell-col cell-input">
+          <picker mode="date" value="{{form.intervalEnd}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+           <view class="picker">
+            {{form.intervalEnd}}
+            </view>
+           </picker>
+        </view> -->
+        </view>
+
+
+
+        <view class="cell" wx:if="{{form.communityId != ''}}">
+          <view class="cell-col cell-title">缴费金额</view>
+          <view class="cell-col cell-input">
+            <input placeholder="请输入缴费金额" type="digit" data-obj="form.totalBill" value="{{form.totalBill}}"
+              disabled="{{totoalBillShow}}" bindinput="inputChange"></input>
+          </view>
+        </view>     
+        <view class="cell">
+          <view class="cell-col cell-title">交费周期</view>
+          <view class="cell-col cell-input">
+            <picker bindchange="bindPayCycleArrayChange" value="{{payCycArrayIndex}}" range="{{payCycleArray}}" range-key="name">
+              <view class="picker">
+                {{payCycArrayIndex ? payCycleArray[payCycArrayIndex].name : '请选择'}}
+              </view>
+            </picker>
+          </view>
+        </view> 
+      </view>
+
+      <view class='row mg-tp-30 tx-ct'>
+        <button type="primary" class="cell-primary" bindtap="handleSubmit">缴费</button>
+      </view>
+    </form>
+  </view>
+
+  <!-- <parkagree class="parkagree" title="无感停车协议"></parkagree> -->
+</view>
+</view>
+<showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' phone="{{phone}}" width="85%" title="短信验证">
+</showmodal>
+<withhol class="agreement"   bind:withholcancel='handleCencel'  bind:withholconfirm='handleConfirm'></withhol>
+
+<roomlist class="roomlist" signImg="{{signImg}}"    bind:roomcancel='roomcancel'  bind:roomconfirm='roomconfirm' roomList="{{roomList}}"></roomlist>
+
+<sign class="sign"    bind:signcancel='signCancel'  bind:signconfirm='signConfirm' canvasShow="{{canvasShow}}"></sign>

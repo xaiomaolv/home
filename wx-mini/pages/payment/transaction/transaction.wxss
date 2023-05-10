@@ -1,0 +1,12 @@
+/* pages/payment/transaction/transaction.wxss */
+.flex-col{
+  line-height: 60rpx;
+}
+.card {
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #484848;
+  line-height: 80rpx;
+}

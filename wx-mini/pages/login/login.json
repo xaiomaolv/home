@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "logo":"/components/logo/logo",
+    "info":"/components/info/index"
+  }
+}

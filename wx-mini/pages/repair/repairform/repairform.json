@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uploadImages": "/components/uploadImages/index",
+    "date-time-picker": "/components/date-time-picker/index"
+  }
+}

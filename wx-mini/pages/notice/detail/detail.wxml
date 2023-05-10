@@ -1,0 +1,16 @@
+<!--pages/notice/detail/detail.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view>
+    <view class="row boeder-bottom">
+      <view class="title tx-ct mg-tp-15">{{info.title}}</view>
+      <view class="title time mg-tp-15  pd-lr-15 pd-bt-5">{{info.community.communityName}}</view>
+      <view class="title time mg-tp-15  pd-lr-15 pd-bt-5">{{info.modifiedTime ? '发布时间：'+ info.modifiedTime : ''}}</view>
+    </view>
+    <view class="row content pd-15 tx-jt">
+      <rich-text nodes="{{info.content}}"></rich-text>
+    </view>
+  </view>
+</view>

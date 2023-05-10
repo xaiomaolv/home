@@ -1,0 +1,15 @@
+<!--pages/notice/detail/detail.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view>
+    <view class="row boeder-bottom">
+      <view class="title tx-ct mg-tp-15">百题</view>
+      <view class="title time mg-tp-15 mg-bt-15 pd-lr-15">发布时间：20120-0101052</view>
+    </view>
+    <view class="content pd-lr-15">
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    </view>
+  </view>
+</view>

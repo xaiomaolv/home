@@ -1,0 +1,11 @@
+/* pages/mine/bankcard/index.wxss */
+/* .cell-code button{
+  width: 100%!important;
+  font-size: 28rpx;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 500;
+  line-height: 46rpx;
+} */

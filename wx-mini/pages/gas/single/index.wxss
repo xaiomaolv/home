@@ -1,0 +1,14 @@
+/* pages/gas/single/index.wxss */
+
+.tab{
+    width: 100%;
+    margin: 0 auto;
+    line-height: 60prx;
+    /* border: #eee solid 1px; */
+    border-radius: 6rpx;
+  }
+  .active{
+    border: var(--primary-color) solid 1px;
+    background-color: var(--primary-color);
+    color: #FFF;
+  }

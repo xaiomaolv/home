@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "parkagree":"/components/parkagree/index"
+  }
+}

@@ -1,0 +1,33 @@
+<!--components/showmodal-input/index.wxml-->
+<view wx:if='{{showModal}}'>
+  <view class='mask_layer' bindtap='modal_click_Hidden' />
+  <view class='modal_box' style="width:{{width}}">
+    <view class="title">{{title}} <image class="close" bindtap='cancel' src="./img/close.png"></image></view>
+    <view class='content'>
+      <view class="row pd-15">
+        <view class="cell">
+          <view class="cell-col cell-title">手机号</view>
+          <view class="cell-col cell-input">
+            <input placeholder="请输入手机号" type="text" data-obj="phone" value="{{phone}}"
+              disabled="{{isDisabled}}" bindinput="inputChange"></input>
+          </view>
+        </view>
+
+        <view class="cell">
+          <view class="cell-col cell-title">验证码</view>
+          <view class="cell-col cell-input">
+            <input placeholder="请输入验证码" type="number" data-obj="form.sms_code" value="{{form.sms_code}}"
+              bindinput="inputChange"></input>
+          </view>
+          <view class="cell-col cell-code">
+            <button bindtap='sendCode' disabled='{{btnDisabled}}'>{{btnValue}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='btn1'>
+      <!-- <view bindtap='cancel' class='cancel'>取消</view> -->
+      <view bindtap='confirm' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>

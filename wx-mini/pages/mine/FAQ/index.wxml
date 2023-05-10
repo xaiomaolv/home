@@ -1,0 +1,12 @@
+<!--pages/mine/FAQ/index.wxml-->
+<view class="container bg-w">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row" >
+    <view class="flex-col pd-15 bd-bt" bindtap="handleTo" wx:for="{{list}}" wx:key="item" data-value="{{item}}">
+      <view class="flex-col-22">{{item.title}}</view> 
+      <view class="flex-col-2 tx-rt"> <text class="cuIcon-right lg text-gray inline"></text></view>   
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<!--pages/electrybill/records/records.wxml-->
+<view class="section">
+  <view class="row flex-col flex-wrap tx-ct">
+    <view class="flex-row flex-col-24 card" wx:for="{{3}}" wx:key="item" style="line-height:56rpx">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">油卡</view>
+        <view class="flex-col-6 tx-rt" data-value="{{item}}">
+          ￥ 200.00
+        </view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-20 tx-lt colorFont">050656575757575757 | 马**</view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-20 tx-lt colorFont">02月25日 08:12</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tx-ct empty" wx:if="{{list == 0}}">
+    <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+    </image>
+    <text class="mg-tp-15">暂无记录</text>
+  </view>
+</view>

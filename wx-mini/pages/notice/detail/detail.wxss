@@ -1,0 +1,18 @@
+/* pages/notice/detail/detail.wxss */
+.boeder-bottom{
+  border-bottom: solid 1px #DDD;
+}
+.pd-15{
+  padding: 30rpx;
+}
+.pd-bt-5{
+  padding-bottom: 10rpx;
+}
+.content{
+  text-indent: 56rpx;
+  line-height: 48rpx;
+}
+.content p{
+  padding: 0;
+  margin: 0;
+}

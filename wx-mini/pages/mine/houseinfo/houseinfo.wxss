@@ -1,0 +1,7 @@
+/* pages/mine/houseinfo/houseinfo.wxss */
+.add-family{
+  color: var(--primary-color);
+}
+.pd-15{
+  padding: 30rpx;
+}

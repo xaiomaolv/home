@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "agreement":"/components/agreement/index",
+    "logo":"/components/logo/logo",
+    "changebind":"/components/changebind/index",
+    "changebindmodal":"/components/changebindmodal/index"  
+  }
+}

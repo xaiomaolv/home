@@ -1,0 +1,92 @@
+<!--pages/index/index.wxml-->
+<web-view wx:if="{{bannerShow}}"  src="{{bannerSrc}}"></web-view>
+<view class="container bg-F8">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="banner swiper bg-w" >
+    <view class="bg"></view>
+    <view class="swiper-card pd-lr-15">
+      <swiper indicator-dots="{{true}}" autoplay="false" interval="3000" duration="500" style="height:100%; border-radius: 30rpx;overflow: hidden;">
+        <block wx:for="{{swiperList}}" wx:key="item">
+          <swiper-item style="height:100%;">
+            <view class="swiper-item" style="height:100%;" data-value="{{item}}" bindtap="handelSwiper">
+              <image class='' src="{{item.url}}" mode="aspectFill" style=" width:100%; display:line-block; "></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  </view>
+
+  <view class="tx-ct bg-w pd-bt-15">
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-8 tx-ct mg-tp-15" wx:for="{{tabList}}" wx:key="item" data-value="{{item}}" bindtap="handleTo">
+        <view class=" background size">
+          <!-- <view class="iconfont {{item.icon}}"></view> -->
+          <image src="{{item.img}}" style="width: 30px; height: 30px;"></image>
+        </view>
+        <view class="title_text">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="notice mg-tp-15 flex-col " bindtap="Notice">
+    <view class="flex-col-6 bd-rt ft-bd">
+        <view class="">物业 <text class="red">通知</text> </view>
+        <!-- <view class="red">通知</view>  -->
+    </view>
+    
+    <view class="flex-1">
+      <text class="content mg-lt-15" wx:if="{{noticeList.length == 0}}">暂无公告信息</text>
+      <text class="content mg-lt-15" wx:if="{{noticeList.length !== 0}}">{{noticeList[0].title}}</text>
+    </view>
+   
+  </view>
+  <view class="title-card pd-lr-15">我的账户</view>
+  <view class="primary-card">
+    <view wx:if="{{!show}}">
+      <!-- <image  src="/img/cardBg.png"></image> -->
+      <view class="tips ft-se-15">
+        <text class="">您还未绑定银行卡</text>
+        <button class="bind-btn" bindtap="Certification">立即绑定</button>
+      </view>
+    </view>
+
+    <view class="row" wx:if="{{show}}" data-value="{{info}}" bindtap="handleTowallet">
+      <view class="money-card">
+        <view class="cardno mg-bt-5">
+            <text class="iconfont icon-gonghang- icon-icbc" style="color:#FFF;"></text>
+            <text class="ft-se-14">{{info.bind_card_type == '0' ?'工商银行卡':'工商银行电子账户'}}</text>
+        </view>
+        <view style="font-size:48rpx;">
+          {{info.bind_card_type == '0'? info.bind_card_tail:info.medium_id_tail }}
+        </view>
+        <view class="flex-col ft-se-14" wx:if="{{info.bind_card_type !== '0'}}" >
+          {{info.medium_id_tail? '绑定卡 '+info.bank_name +'  '+ info.bind_card_tail : ""}}
+        </view>
+        <view class="flex-col ft-se-14">
+          <view class=""> 余额：{{money ? money + '元' : '0.00'}} </view>
+          <text class="iconfont  {{ !moneyShow ? 'icon-yanjing':'icon-chakan'}}"
+            style="color:#FFF; font-size:30rpx; margin-left:30rpx" catchtap="handleLook"></text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+
+  <view class="item mg-tp-10">
+    <text class="title-card">待办事项</text>
+    <view class="todo pd-tb-15 ft-se-15">
+      <!-- <text space="emsp">当前无交费项，请</text> <text class="bind" bindtap="Bindhouse">绑定房屋</text> -->
+      <text space="emsp" wx:if="{{schedule == 0}}">当前无待办事项</text>
+      <text space="emsp" wx:if="{{schedule > 0}}" bindtap="handelToPay">当前您有<text class="pm-color">{{schedule}}</text>条待交费账单</text>
+      <!-- {{schedule !== '0' ? '您当前有'+ schedule + '条待交账单' :''}} -->
+    </view>
+  </view>
+  <logo class="logo" bind:accredit="handleAccredit" title="授权"></logo>
+</view>

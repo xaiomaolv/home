@@ -1,0 +1,111 @@
+/* pages/wallet/record/record.wxss */
+.record {
+  background-color: var(--white);
+  padding: 20rpx 30rpx;
+  /* margin-bottom:2rpx; */
+  align-items: center;
+  min-height: 120rpx;
+  justify-content: space-between;
+  margin-bottom: 3rpx;
+}
+
+.under {
+  margin-top: 10rpx;
+}
+
+.money {
+  float: right;
+  color: #f9364f;
+}
+
+.time {
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.succerr {
+  float: right;
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.lodemore {
+  display: inline-block;
+  margin-top: 40rpx;
+  color: var(--primary-color);
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-weight: 600;
+  line-height: 56rpx;
+  position: relative;
+  padding-left: 60rpx;
+}
+
+.cuIcon-loading2 {
+  margin-bottom: -100px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.tab {
+  width: 90%;
+  margin: 0 auto;
+  line-height: 60rpx;
+  border: #DDD solid 1px;
+  border-radius: 10rpx;
+}
+
+.active {
+  border: var(--primary-color) solid 1px;
+  background-color: var(--primary-color);
+  color: #FFF;
+}
+
+.tabNav {
+  /* z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0; */
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  display: flex;
+  padding: 0 20rpx;
+  border-bottom: 1px solid #dedede;
+  box-sizing: border-box;
+}
+
+.tabNav>view {
+  color: #484848;
+  width: 50%;
+  text-align: center;
+  /* margin-right: 50rpx; */
+}
+
+.tabNav>view:last-child {
+  margin-right: 0;
+}
+
+.tabNav>view text {
+  width: 100%;
+  /* padding: 0 15rpx; */
+  height: 75rpx;
+  display: inline-block;
+}
+
+.tabNav .cur text {
+  /* width: 100%; */
+  border-bottom: 5rpx solid var(--primary-color);
+  color: var(--primary-color);
+}

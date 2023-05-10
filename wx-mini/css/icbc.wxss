@@ -1,0 +1,19 @@
+/* 工行专用css */
+/* 不介意使用内嵌样式,使用前请先大致看一遍main.wxss和icbc.wxss */
+/* 尽量使用已经定义的css样式和cu-样式 */
+page {
+  /* 主色颜色  #FE716F*/
+  --primary-color:#fd7380; 
+  /* 副色颜色（暂未使用） */
+  --secondly-color: #000000;
+  --white-color: #FFF;
+  /* 边框定义 */
+  --border-radius: 10rpx;
+  --border-radius-3:6rpx;
+  --border-radius-5:10rpx;
+  --border-radius-8:16rpx;
+  --border-radius-10:20rpx;
+  --border-color:#eee ;
+  --bth-max-width:95%;
+}
+

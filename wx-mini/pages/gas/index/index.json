@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "showmodal":"../../../components/refundpay/index",
+    "agreement":"../../../components/agreement/index"
+  }
+}

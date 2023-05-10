@@ -1,0 +1,160 @@
+<!--pages/gas/index/index.wxml-->
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+<view class="container">
+    <view class='copy'>
+        <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+    </view>
+
+    <view class="row">
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx">
+            <view class=" row  tx-lt pd-tb-20">
+                <view class="flex-col ">
+                    还款金额（元）
+                </view>
+                <view class="flex-col ft-se-18 ft-bd">
+                    {{totalBill}}
+                </view>
+            </view>
+        </view>
+        <radio-group class="radio"  bindchange="dispathChange" style="width:100%">
+            <view class="mg-tp-15 pd-15 card" wx:if='{{allShow}}' style="line-height:56rpx">
+                <view class=" row  tx-lt pd-tb-15">
+                    <view class="flex-col ">
+                        <view class="flex-col-3 tx-lt">
+                            <radio value="{{list[0]}}" class="item-radio " checked="{{checkedId == list[0]}}" />
+                        </view>
+                        <view class="flex-col-21">
+                            <view class="flex-col">
+                                <view class="flex-col-12">全额还款</view>
+                                <view class="flex-col-12 tx-rt">{{totalBill}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="mg-tp-15 pd-15 card" wx:if='{{gasShow}}' style="line-height:56rpx">
+                <view class=" row  tx-lt pd-tb-15">
+                    <view class="flex-col flex-col-item">
+                        <view class="flex-col-3 tx-lt">
+                            <radio value="{{list[2]}}" class="item-radio " checked="{{checkedId == list[2]}}" />
+                        </view>
+                        <view class="flex-col-21">
+                            <view class="flex-col mg-bt-15">
+                                <view class="flex-col-12">分期还款</view>
+                                <view class="flex-col-12 tx-rt">{{totalBill}}</view>
+                            </view>
+                            <view class="flex-col mg-bt-10">
+                                <view class="flex-col-12">期数</view>
+                                <view class="flex-col-12 tx-rt" bindtap="handleStage">{{periods}} <text class="iconfont {{stageShow? 'icon-xiangshang':'icon-xiangxia' }} "></text></view>
+                            </view>
+                            <view class="flex-col flex-wrap mg-bt-15" wx:if="{{stageShow}}">
+                                <view class="flex-col-12 tx-ct mg-bt-10" wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab">
+                                    <view class="tab {{currentTab == index ? 'active' : ''}}">{{item.title}}</view>
+                                </view>
+                            </view>
+
+                            <view class="flex-col flex-col-item">
+                                <view class="flex-col-6">金额</view>
+                                <view class="flex-col-18 tx-rt">
+                                    <view class="" bindtap="handleMoney">首期{{eachAmount}} <text class="iconfont {{moneyShow? 'icon-xiangshang':'icon-xiangxia'}} "></text></view>
+                                    <!-- <view class="">含服务费3.01，前1期0.00元</view> -->
+                                </view>
+                            </view>
+                            <view class="mg-tp-15" wx:if="{{moneyShow}}" wx:for="{{installment}}" wx:key="index">
+                                <view class="flex-col">
+                                    <view class="flex-col-10">{{item.No}}/{{item.totalPeriods}}期</view>
+                                    <view class="flex-col-14 tx-rt">{{item.amount}}</view>
+                                </view>
+                                <view class="flex-col">
+                                    <view class="flex-col-10">还款日{{item.dueDate}}</view>
+                                    <!-- <view class="flex-col-14 tx-rt">含服务费90.00元</view> -->
+                                </view>
+                            </view>
+
+
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="mg-tp-15 pd-15 card" wx:if='{{djShow}}' style="line-height:56rpx">
+                <view class=" row  tx-lt pd-tb-15">
+                    <view class="flex-col ">
+                        <view class="flex-col-3 tx-lt">
+                            <radio value="{{list[1]}}" class="item-radio " checked="{{checkedId == list[1]}}" />
+                        </view>
+                        <view class="flex-col-21">
+                            <view class="flex-col">
+                                <view class="flex-col-12">定金还款</view>
+                                <view class="flex-col-12 tx-rt">{{depositAmount}}</view>
+                            </view>
+                            <view class="flex-col">
+                                <view class="flex-col-12 ft-se-12">定金为还款金额的30%</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+
+    <view class=" mg-tp-30 pd-lr-15 " wx:if="{{checkedId == 2}}">
+        <view class="ft-se-16" style="color:var(--primary-color)" data-value="{{agreementList[0]}}" bindtap="handleAgreement">
+            {{agreementList[0].title}}</view>
+        <view class="flex-col mg-tp-20">
+            <checkbox catchtap="switchAgreement" class="mg-rt-10" checked="{{agreement}}" />
+            <view class="pd-lt-10  ft-se-16">我已阅读协议，并同意</view>
+        </view>
+
+    </view>
+
+    <view class='row mg-20 tx-ct'>
+        <button class="submit-btn primary btn-block" bindtap="handlePay">还款</button>
+    </view>
+
+
+    <!-- <view class="fixed-bottom row" style="height: 100vh; background-color: rgba(0,0,0,.3);" wx:if="{{show}}">
+        <view class="bg-w  fixed-bottom row">
+            <view class="pd-tb-20 pd-lr-15">
+                <view class="flex-col mg-bt-30">
+                    <view class="flex-col-20 ft-se-16 ft-bd">确认分期还款</view>
+                    <view class="flex-col-4 tx-rt" bindtap="handleCencel">
+                        <image src="../../../img/close.png" alt="" style="width: 50rpx; height: 50rpx;"></image>
+                    </view>
+                </view>
+                <view class="flex-col mg-bt-30 ">
+                    <view class="flex-col-12">分期金额</view>
+                    <view class="flex-col-12 tx-rt">200</view>
+                </view>
+                <view class="flex-col mg-bt-30">
+                    <view class="flex-col-12">分期期数</view>
+                    <view class="flex-col-12 tx-rt">3期</view>
+                </view>
+
+                <view class="flex-col flex-col-item mg-bt-30">
+                    <view class="flex-col-6">每期应还</view>
+                    <view class="flex-col-18 tx-rt">
+                        <view class="">130 </view>
+                        <view class="">含服务费3.01，前1期0.00元</view>
+                    </view>
+                </view>
+
+                <view class="flex-col flex-col-item mg-bt-30">
+                    <view class="flex-col-6">首期还款日</view>
+                    <view class="flex-col-18 tx-rt">
+                        <view class="">2月8日</view>
+                    </view>
+                </view>
+                
+            </view>
+        
+            <button class="submit-btn primary btn-block" bindtap="handleConfirm">确认分期</button>
+        </view>
+    </view> -->
+</view>
+
+<showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' phone="{{phone}}" width="85%" title="短信验证">
+</showmodal>
+
+<agreement class="agreement" title="{{agreeTitle}}" Id="{{agreeId}}"></agreement>

@@ -1,0 +1,14 @@
+<!--components/showmodal-input/index.wxml-->
+<view wx:if='{{showModal}}'>
+  <view class='mask_layer' bindtap='modal_click_Hidden' />
+  <view class='modal_box' style="width:{{width}}">
+    <view class="title">{{title}}</view>
+    <view class='content'>
+        <slot></slot>        
+    </view>
+    <view class='btn1'>
+      <view bindtap='cancel' class='cancel'>取消</view>
+      <view bindtap='confirm' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>

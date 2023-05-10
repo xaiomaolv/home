@@ -1,0 +1,69 @@
+/* pages/property/property.wxss */
+.container{
+  padding-bottom:300rpx;
+}
+.indexFixed{
+  position: fixed;
+  /* top:0;//top:0可不写,否则显示弹窗的同时会使底层滚动到顶部. */
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+ }
+ 
+ .cell-box{
+   float: right;
+   margin-left: 20rpx;
+ }
+
+.card{
+  margin: 20rpx 20rpx 10rpx 20rpx;
+  padding:20rpx 30rpx;
+  line-height: 56rpx;
+  position: relative;
+}
+.account{
+  width: 100%!important;
+  background-color: var(--primary-color);
+  color: #FFF;
+  line-height: 140rpx ;
+  font-size: 28rpx;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #FFF;
+  line-height: 60rpx;
+  position: absolute;
+  top:20rpx;
+  left:60rpx;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.copy {
+  bottom:160rpx;
+}
+
+
+.menu_box{
+  display: flex;
+  height: 80rpx;
+ }
+ .menu1,.menu2{
+  flex: 1;
+  font-size:30rpx;
+  line-height: 80rpx;
+  text-align: center;
+ }
+ .borders{
+  border-bottom: 4rpx solid #f00;
+  color: #f00;
+ }
+ .tab1,.tab2{
+  height: 300rpx;
+ }

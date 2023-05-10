@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showmodal":"/components/showmodal-input/index"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":150
+}

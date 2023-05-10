@@ -1,0 +1,35 @@
+<!--pages/payment/transaction/transaction.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="card">
+    <view class="bg-w pd-5-8 mg-tp-15">
+    <!-- <view class="flex-col">
+      <view class="flex-col-12 tx-lt">业主ID</view>
+      <view class="flex-col-12 tx-rt">{{info.owner.}}</view>
+    </view> -->
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt" style="font-size:36rpx">付款金额</view>
+      <view class="flex-col-12 tx-rt" style="font-size:36rpx">￥ {{info.amount}} 元</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">交费类目</view>
+      <view class="flex-col-12 tx-rt" >{{info.cateName}} </view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-6 tx-lt">交费流水号</view>
+      <view class="flex-col-18 tx-rt">{{info.flowId}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">付款人</view>
+      <view class="flex-col-12 tx-rt">{{info.accountName}}</view>
+    </view>
+    <view class="flex-col">
+      <view class="flex-col-12 tx-lt">支付时间</view>
+      <view class="flex-col-12 tx-rt">{{info.modifiedTime}}</view>
+    </view>
+  </view>
+  </view>
+  
+</view>

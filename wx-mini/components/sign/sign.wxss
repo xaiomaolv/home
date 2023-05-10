@@ -1,0 +1,144 @@
+/* components/sign/sign.wxss */
+@import "../../css/icbc.wxss";
+@import "../../css/main.wxss";
+@import "../../css/icon.wxss";
+@import "../../css/project.wxss";
+@import "../../css/stylesheet.wxss";
+@import "../../css/flex.wxss";
+.centent{
+  font-size: 28rpx;
+  line-height: 48rpx;
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
+}
+/* components/modal.wxss */
+.mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9999;
+  }
+  
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    /* height: 80%; */
+    background-color: #fff;
+    border-radius: 10rpx;
+    position: relative;
+  }
+  
+  .modal-btn-wrapper{
+    display: flex;
+    flex-direction: row;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top: 2rpx solid rgba(7,17,27,0.1);
+  }
+  
+  .cancel-btn, .confirm-btn{
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 28rpx;
+  }
+  
+  .cancel-btn{
+    border-right: 2rpx solid rgba(7,17,27,0.1);
+  }
+  
+  .main-content{
+    flex: 1;
+    height: 100%;
+    overflow-y: hidden; 
+  }
+  .pd-15{
+    padding: 30rpx;
+  }
+  .pd-tb-10{
+    padding: 40rpx 0 20rpx 0;
+    color: #fd7380;
+    text-align: center;
+    font-size: 28rpx;
+  }
+
+
+  .tips {
+    font-size: 16px;   
+    color: darkorange;
+  }
+  
+  .del {
+    position: absolute;
+    left: 100rpx;
+    bottom: 0rpx;
+    width: 140rpx !important;
+    height: 70rpx !important;
+    padding: 0 !important;
+    border-radius: 0px !important;
+  }
+  
+  .confirm {
+    position: absolute;
+    right: 100rpx;
+    bottom: 0rpx;
+    width: 140rpx !important;
+    height: 70rpx !important;
+    padding: 0 !important;
+    border-radius: 0px !important;
+  }
+  
+  .mi {
+    opacity:0.1;
+    top: 18vh;
+    height: 30.3vw;
+    left: 5vw;
+    width: 30.3vw;
+  }
+  .signName{
+    color: black;
+  }
+  
+  .delBtn {
+    width: 40%;
+    color: #666;
+  }
+  .subBtn {
+    width: 40%;
+    background: #008ef6;
+    color: #fff;
+  }
+
+  button{
+    font-size: 28rpx;
+  }
+
+  .btnList{
+    width: 95%;
+    margin:0 auto;
+}
+
+
+.content {
+    /* width: 100%; */
+    height: 90%;
+}
+.sign_canvas{
+  width: 100%;
+  border: #000 solid 1px;
+}
+.btn-bd{
+  border: solid 1px #000;
+  line-height: 48rpx;
+  background-color: #FFF;
+  padding: 10rpx 0;
+}

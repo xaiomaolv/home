@@ -1,0 +1,36 @@
+/* pages/property/stopcae/stopcae.wxss */
+.container{
+  padding-bottom:200rpx;
+}
+.card{
+  margin: 20rpx 20rpx 10rpx 20rpx;
+  padding:20rpx 30rpx;
+  line-height: 56rpx;
+  position: relative;
+}
+.account{
+  width: 100%!important;
+  background-color: var(--primary-color);
+  color: #FFF;
+  line-height: 140rpx ;
+  font-size: 28rpx;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #FFF;
+  line-height: 60rpx;
+  position: absolute;
+  top:20rpx;
+  left:60rpx;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.copy {
+  bottom:160rpx;
+}

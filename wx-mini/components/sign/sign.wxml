@@ -1,0 +1,49 @@
+<!--components/sign/sign.wxml-->
+
+<view class='mask' wx:if='{{show}}' style="left:{{!canvasShow ?'-200%': '0'}}; z-index:{{!canvasShow ?'-10': '9999'}} ; background:{{!canvasShow ?'rgba(0,0,0,0);': 'rgba(0,0,0,0.4)'}} ;" >
+  <view class='modal-content' style="left:{{!canvasShow ?'-200%': '0'}}; height:{{vheight}}">
+    <view class="font-sm tips pd-lr-15 pd-tb-15">请签约人在方框内使用正楷签名</view>
+    <!-- <view class="pd-tb-10" style="width:90%; margin:0 auto;">{{title}}</view> -->
+    <scroll-view scroll-y class='main-content'>    
+        <view class='content pd-lr-15'>
+            <!-- 低版本 -->
+          <canvas class="sign_canvas" 
+              wx:if="{{lowVision}}"
+              disable-scroll 
+              canvas-id="signCanvas" 
+              bindtouchstart="signStart" 
+              bindtouchmove="signMove" 
+              bindtouchend="signEnd"
+              style="width:{{width}}rpx;height:{{height}}rpx;">
+          </canvas>
+          <!-- 高版本 type=2d -->
+          <canvas class="sign_canvas" 
+              wx:else
+              disable-scroll 
+              type="2d" 
+              id="signCanvas" 
+              bindtouchstart="signStart" 
+              bindtouchmove="signMove" 
+              bindtouchend="signEnd"
+              style="width:{{width}}rpx;height:{{height}}rpx;">
+          </canvas>
+
+          <view class="flex-col mg-tp-10">
+            <view class="flex-col-12 tx-lt">
+              <button class="  round  btn-bd " style="width:100%" bindtap="clean">清除</button>
+            </view>
+            <view class="flex-col-12 tx-rt">
+            </view>
+            
+          </view>
+        
+        </view>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>关闭</view>
+      <view class='confirm-btn' style='color: #fd7380;' bindtap='confirm'>确定</view>
+    </view>
+  </view>
+</view>
+
+

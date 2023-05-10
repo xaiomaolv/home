@@ -1,0 +1,27 @@
+<!--pages/payment/pay/pay.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="bankcard">
+     <view class="">待交费用：200.00元</view>
+    <view class="money cu-form-group">
+      <text class="flag">￥</text>
+      <input class="num" bindinput="inputChange" type="digit" data-obj="amount" value="{{amount}}" placeholder="0.00"></input>
+      <text class="yuan">元</text>
+    </view>
+    <text class="tips"></text>
+    <!-- <view class="sum">
+      <button class="cu-btn btn" data-obj="amount" data-value="50" bindtap="inputChange">50</button>
+      <button class="cu-btn btn" data-obj="amount" data-value="100" bindtap="inputChange">100</button>
+      <button class="cu-btn btn" data-obj="amount" data-value="150" bindtap="inputChange">150</button>
+      <button class="cu-btn btn" data-obj="amount" data-value="200" bindtap="inputChange">200</button>
+      <button class="cu-btn btn" data-obj="amount" data-value="300" bindtap="inputChange">300</button>
+      <button class="cu-btn btn" data-obj="amount" data-value="500" bindtap="inputChange">500</button>
+    </view> -->
+  </view>
+  <!-- <view class="" style="width:92%; margin:0 auto;">
+     <text class="title-notic" space="emsp">温馨提示：</text>提交资金转出申请后2小时内到账，结果请稍后查询
+  </view> -->
+  <button class="submit-btn primary btn-block" bindtap="cash">交费</button>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "logo":"/components/logo/logo",
+    "star":"/components/star/star"
+  }
+}

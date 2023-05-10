@@ -1,0 +1,77 @@
+<!--pages/sendorder/sendorder.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab"
+      class="{{currentTab==index ? 'cur' : ''}}">
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <view class="">
+    <view class="row flex-col flex-wrap tx-ct">
+      <!-- list -->
+      <view wx:for="{{list}}" wx:key="item"
+        class="flex-row flex-col-24 card card-bg {{item.dispatchStatus == 1 ? 'pd-bt-0':''}}" data-value="{{item}}">
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">
+            房屋：{{item.room.community.communityName}}{{ item.room.floor.name }}{{item.room.unit.unitNum ? '-' + item.room.unit.unitNum:''}}{{ item.room.roomNum ? '-' + item.room.roomNum :''}}
+          </view>
+          <view class="flex-col-4 tx-rt" wx:if="{{item.dispatchStatus != 2 && item.dispatchStatus != 3 }}"
+            data-value="{{item}}" bindtap="dispatch">
+          </view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">派单状态：{{item.statusDispatch}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">报修类别：{{item.category.categoryName}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+        <view class="flex-col flex-col-24 flex-col-item">
+          <view class="flex-col-6 tx-lt">报修内容：</view><view class="flex-col-19 tx-lt">{{item.content}}</view>
+        </view>
+
+        <view class="flex-col flex-col-24">
+          <view class="flex-col-20 tx-lt">申请时间：{{item.createdTime}}</view>
+          <view class="flex-col-4 tx-rt"></view>
+        </view>
+
+        <view class="flex-col flex-col-24 border-top tx-ct add-family mg-tp-10" wx:if="{{item.dispatchStatus == 1}}">
+          <view class="flex-col-12 pd-tb-10  border-right" data-value="{{item}}" bindtap="dispatch">
+            派单
+          </view>
+          <view class="flex-col-12  pd-tb-10 " data-value="{{item}}" bindtap="handleFinish">
+            <view class="flex-col-24">
+              完成
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <showmodal class="showmodal" bindcancel="cancel" bindconfirm='confirm' title="完成订单">
+      <view class="row pd-15">
+        <textarea class='' bindinput='changeCancelReason' auto-height value='{{remark}}' bindfocus='bindfocus'
+          bindblur='bindblur' placeholder='请输入备注'></textarea>
+      </view>
+    </showmodal>
+
+    <view class="tx-ct empty" wx:if="{{list.length == 0}}">
+      <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+      </image>
+      <text class="mg-tp-15">暂无记录</text>
+    </view>
+
+    <view class="tx-ct" wx:if="{{list.length !== 0}}">
+      <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>没有更多了...</text>
+      <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>加载更多...</text> -->
+    </view>
+  </view>
+</view>

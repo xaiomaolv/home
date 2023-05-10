@@ -1,0 +1,172 @@
+<!--pages/property/deatil/detail.wxml-->
+<view class="container">
+    <view class='copy'>
+        <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+    </view>
+
+
+
+
+    <view wx:if="{{list.length == 0 }}">
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx">
+
+            <view class=" row  tx-lt">
+
+                <view class="flex-col-24 tx-lt">
+                    <view class="row flex-col pd-tp-15 ">
+                        <view class="flex-col-8">欠费金额</view>
+                        <view class="flex-col-16">
+                            {{item.totalBill? item.totalBill + '元' : ''}}
+                        </view>
+                    </view>
+                    <view class="row flex-col">
+                        <view class="flex-col-8">交费户名</view>
+                        <view class="flex-col-16">
+                            {{item.room.owner.ownerName}}
+                        </view>
+                    </view>
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">地址</view>
+                        <view class="flex-col-16">
+                            {{item.room.community.communityName}}{{item.room.floor.name ? item.room.floor.name : '' }}{{item.room.unit.unitNum ? '-' + item.room.unit.unitNum : '' }}{{item.room.roomNum ? '-' + item.room.roomNum : '' }}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费标题</view>
+                        <view class="flex-col-16">
+                            {{item.payTitle}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费类目</view>
+                        <view class="flex-col-16">
+                            {{item.category.categoryName}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">账单区间</view>
+                        <view class="flex-col-16">
+                            {{item.intervalStart? item.intervalStart: ''}} {{item.intervalStart || item.intervalEnd ? '至': ''}}
+                            {{item.intervalEnd? item.intervalEnd: ''}}
+                        </view>
+                    </view>
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费明细</view>
+                        <view class="flex-col-16">
+                            {{item.payDetails? item.payDetails:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">上次读数</view>
+                        <view class="flex-col-16">
+                            {{item.readingStart ? item.readingStart:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">本次读数</view>
+                        <view class="flex-col-16">
+                            {{item.readingEnd ? item.readingEnd:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">单价</view>
+                        <view class="flex-col-16">
+                            {{item.onePrice ? item.onePrice:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">面积/用量</view>
+                        <view class="flex-col-16">
+                            {{item.dosage ? item.dosage:'--'}}
+                        </view>
+                    </view>
+                </view>
+
+
+
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{list.length !== 0 }}">
+        <view class="mg-tp-15 pd-15 card" style="line-height:56rpx" wx:for="{{list}}" wx:key="index" data-value="{{item}}">
+
+            <view class=" row  tx-lt">
+                <view class="flex-col-24 tx-lt" >
+                    <view class="row flex-col pd-tp-15 ">
+                        <view class="flex-col-8">欠费金额</view>
+                        <view class="flex-col-16">
+                            {{item.totalBill? item.totalBill + '元' : ''}}
+                        </view>
+                    </view>
+                    <view class="row flex-col">
+                        <view class="flex-col-8">交费户名</view>
+                        <view class="flex-col-16">
+                            {{item.room.owner.ownerName}}
+                        </view>
+                    </view>
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">地址</view>
+                        <view class="flex-col-16">
+                            {{item.room.community.communityName}}{{item.room.floor.name ? item.room.floor.name : '' }}{{item.room.unit.unitNum ? '-' + item.room.unit.unitNum : '' }}{{item.room.roomNum ? '-' + item.room.roomNum : '' }}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费标题</view>
+                        <view class="flex-col-16">
+                            {{item.payTitle}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费类目</view>
+                        <view class="flex-col-16">
+                            {{item.category.categoryName}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">账单区间</view>
+                        <view class="flex-col-16">
+                            {{item.intervalStart? item.intervalStart: ''}} {{item.intervalStart || item.intervalEnd ? '至': ''}}
+                            {{item.intervalEnd? item.intervalEnd: ''}}
+                        </view>
+                    </view>
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费明细</view>
+                        <view class="flex-col-16">
+                            {{item.payDetails? item.payDetails:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">上次读数</view>
+                        <view class="flex-col-16">
+                            {{item.readingStart ? item.readingStart:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">本次读数</view>
+                        <view class="flex-col-16">
+                            {{item.readingEnd ? item.readingEnd:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">单价</view>
+                        <view class="flex-col-16">
+                            {{item.onePrice ? item.onePrice:'--'}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">面积/用量</view>
+                        <view class="flex-col-16">
+                            {{item.dosage ? item.dosage:'--'}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+</view>

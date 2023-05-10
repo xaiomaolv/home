@@ -1,0 +1,7 @@
+<!--components/date-time-picker/index.wxml-->
+<!-- <picker mode="multiSelector"  class="tx-rt" name="{{name}}" value="{{multiSelectdArray}}" range="{{multiDateTime}}" bindcolumnchange="handleColumnChange" bindchange="handleValueChange" bindcancel="handleCancel">
+  <slot></slot>
+</picker> -->
+<picker mode="multiSelector" class="tx-rt" value="{{valueArray}}" range="{{rangeValues}}" bindcolumnchange="handleColumnChange" bindchange="handleValueChange" bindcancel="handleCancel">
+  <slot></slot>
+</picker>

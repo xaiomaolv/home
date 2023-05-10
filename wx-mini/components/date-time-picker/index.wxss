@@ -1,0 +1,4 @@
+/* components/date-time-picker/index.wxss */
+.tx-rt{
+  text-align: right;
+}

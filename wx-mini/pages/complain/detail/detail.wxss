@@ -1,0 +1,4 @@
+/* pages/notice/detail/detail.wxss */
+.boeder-bottom{
+  border-bottom: solid 1px #DDD;
+}

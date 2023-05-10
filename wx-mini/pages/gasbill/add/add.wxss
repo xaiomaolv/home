@@ -1,0 +1,28 @@
+/* pages/waterbill/add/add.wxss */
+.card{
+  margin: 40rpx;
+  padding:80rpx 60rpx;
+  line-height: 52rpx;
+}
+.picker{
+  position: relative;
+}
+.cuIcon-right{
+  position: absolute;
+  top: 50%;
+  right: 10rpx;
+  transform: translateY(-50%);
+}
+.mg-20{
+  /* margin: 40rpx; */
+}
+.primary{
+	width:90%!important;
+  height: 110rpx;
+  line-height: 110rpx;
+	background-color: var(--primary-color)!important;
+	border-radius: var(--border-radius-5)!important; 
+}
+.bd-bt{
+  border-bottom: solid 1px #e6e6e6;
+}

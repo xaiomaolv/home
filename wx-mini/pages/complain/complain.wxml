@@ -1,0 +1,72 @@
+<!--pages/complain/complain.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="fixed-add" bindtap="handleAdd">
+    <view class="cuIcon-add"></view>
+  </view>
+  <view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab"
+      class="{{currentTab==index ? 'cur' : ''}}">
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <view class="orderInfo">
+    <view class="orderInfo-item mg-tp-15 bg-w pd-15 card" wx:for="{{list}}" wx:key="index" data-value="{{item}}">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">房屋：{{item.communityName}}{{ item.name }} {{item.unitNum ? '-' + item.unitNum:''}}{{ item.roomNum ? '-' + item.roomNum :''}}</view>
+        <view class="flex-col-4 tx-rt">
+          <!-- <button class="pay-btn " data-value="{{item}}" bindtap="handlePay">详情</button> -->
+        </view>
+      </view>
+
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">状态：{{ item.state == '0' ? "待处理" : "处理完成"}}</view>
+        <view class="flex-col-4 tx-rt"></view>
+      </view>
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">投诉人：{{item.complainant}}</view>
+        <view class="flex-col-4 tx-rt"></view>
+      </view>
+
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">投诉类型：{{item.type == 1 ? "投诉" : "建议"}}</view>
+        <view class="flex-col-4 tx-rt"></view>
+      </view>
+
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">联系电话：{{item.phone}}</view>
+        <view class="flex-col-4 tx-rt"></view>
+      </view>
+
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">时间： {{item.modifiedTime}}</view>
+        <view class="flex-col-4 tx-rt"></view>
+      </view>
+
+      <view class="flex-col flex-col-24 flex-col-item">
+        <view class="flex-col-24 tx-lt">投诉内容：{{item.content}}</view>
+        <!-- <view class="flex-col-18 tx-lt"></view> -->
+      </view>
+      <view class="flex-col flex-col-24 flex-col-item" wx:if="{{item.state == 1}}">
+        <view class="flex-col-24 tx-lt">投诉回复：{{item.reply}}</view>
+        <!-- <view class="flex-col-19 tx-lt"></view> -->
+      </view>
+      
+
+    </view>
+  </view>
+  <view class="tx-ct empty" wx:if="{{list.length == 0}}">
+    <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+    </image>
+    <text class="mg-tp-15">暂无记录</text>
+  </view>
+
+  <view class="tx-ct" wx:if="{{list.length !== 0}}">
+    <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>没有更多了...</text>
+    <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>加载更多...</text> -->
+  </view>
+</view>

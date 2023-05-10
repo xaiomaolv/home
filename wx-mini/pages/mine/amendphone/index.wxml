@@ -1,0 +1,46 @@
+<!--pages/mine/amendphone/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row">
+    <view class="cell mg-tp-15">
+      <view class="cell-col cell-title">旧手机号</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入手机号" type="idcard" data-obj="form.name" value="{{form.cert_no}}"
+          disabled="{{isDisabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+    <view class="cell">
+      <view class="cell-col cell-title">验证码</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入验证码" type="number" data-obj="form.code" value="{{form.code}}"
+          bindinput="inputChange"></input>
+      </view>
+      <view class="cell-col cell-code">
+        <button bindtap='cardSendCode' disabled='{{btnDisabled}}'>发送验证</button>
+      </view>
+    </view>
+    <view class="cell mg-tp-15">
+      <view class="cell-col cell-title">新手机号</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入手机号" type="idcard" data-obj="form.name" value="{{form.cert_no}}"
+          disabled="{{isDisabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+    <view class="cell">
+      <view class="cell-col cell-title">验证码</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入验证码" type="number" data-obj="form.code" value="{{form.code}}"
+          bindinput="inputChange"></input>
+      </view>
+      <view class="cell-col cell-code">
+        <button bindtap='cardSendCode' disabled='{{btnDisabled}}'>发送验证</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='row mg-tp-30 tx-ct'>
+    <button type="primary" class="cell-primary" bindtap="bindHouse">提交</button>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+/* pages/wallet/cash/cash.wxss */
+.card{
+  padding: 60rpx 40rpx;
+  margin: 30rpx;
+  color: #484848;
+}
+
+.num {
+  font-size: 48rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  /* color: #FFF; */
+}
+.flag{
+  text-align: center;
+  font-size: 32px;
+}
+.yuan{
+  font-size: 20px;
+}
+
+.tips {
+  /* margin-left: 20px; */
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: gray;
+}
+
+.tab{
+  width: 90%;
+  margin: 0 auto;
+  line-height: 60rpx;
+  border: #eee solid 1px;
+  border-radius: 10rpx;
+}
+.active{
+  border: var(--primary-color) solid 1px;
+  background-color: var(--primary-color);
+  color: #FFF;
+}

@@ -1,0 +1,4 @@
+/* pages/house/family-tenants/family-tenants.wxss */
+.fl-rt{
+  float: right;
+}

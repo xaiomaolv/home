@@ -1,0 +1,84 @@
+<!--pages/electrybill/records/records.wxml-->
+<view class="menu_box">
+ <text class='menu1 {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">交费</text>
+ <text class='menu2 {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">退款</text>
+</view>
+
+<view class="tab1" hidden="{{menuTapCurrent!='0'}}">
+<view class="section">
+  <view class="row flex-col flex-wrap tx-ct">
+    <view class="flex-row flex-col-24 card" wx:for="{{list}}" wx:key="item" style="line-height:56rpx">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">{{item.category.categoryName}}</view>
+        <view class="flex-col-6 tx-rt" data-value="{{item}}">
+          ￥ {{item.totalBill}}
+        </view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-24 tx-lt colorFont">
+          房屋信息：{{item.room.community.communityName}}{{item.room.floor.name ?' '+item.room.floor.name:''}}{{item.room.unit.unitNum ?'-'+ item.room.unit.unitNum:''}}{{item.room.roomNum ?'-'+ item.room.roomNum:''}}
+        </view>
+      </view>
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">{{'账单区间：'+ item.intervalStart +'~'+ item.intervalEnd}}</view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-20 tx-lt colorFont">交费时间：{{item.modifiedTime ? item.modifiedTime:''}}</view>
+      </view>
+      <view class="bd-tp flex-col mg-tp-10 pd-tp-10" style="width: -webkit-fill-available;" bindtap="handleDeatil" data-value="{{item}}">
+        <view class="flex-col-16" style="text-align: initial;">查看详情</view>
+        <view class="flex-col-8 tx-rt">
+          <text class="cuIcon-right lg text-gray inline"></text>
+        </view>     
+      </view>
+    </view>
+  </view>
+
+  <view class="tx-ct empty" wx:if="{{list.length == 0}}">
+    <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+    </image>
+    <text class="mg-tp-15">暂无记录</text>
+  </view>
+
+  <view class="tx-ct" wx:if="{{list.length !== 0}}">
+    <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>没有更多了...</text>
+    <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>加载更多...</text> -->
+  </view>
+</view>
+</view>
+
+<view class="tab2" hidden="{{menuTapCurrent!='1'}}">
+  <view class="section">
+  <view class="row flex-col flex-wrap tx-ct">
+    <view class="flex-row flex-col-24 card" wx:for="{{list}}" wx:key="item" style="line-height:56rpx">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">{{item.category.categoryName}}</view>
+        <view class="flex-col-6 tx-rt" data-value="{{item}}">
+          ￥ {{item.totalBill}}
+        </view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-20 tx-lt colorFont">退款时间：{{item.createdTime ? item.createdTime:''}}</view>
+      </view>
+      <view class="flex-col flex-col-24" data-value="{{item}}">
+        <view class="flex-col-20 tx-lt colorFont">退至账户：{{item.category.propertyAccount ? item.category.propertyAccount :''}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tx-ct empty" wx:if="{{list.length == 0}}">
+    <image src="https://img01.yzcdn.cn/vant/empty-image-default.png" class="empty-img">
+    </image>
+    <text class="mg-tp-15">暂无记录</text>
+  </view>
+
+  <view class="tx-ct" wx:if="{{list.length !== 0}}">
+    <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>没有更多了...</text>
+    <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>加载更多...</text> -->
+  </view>
+</view>
+</view>

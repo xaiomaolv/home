@@ -1,0 +1,22 @@
+<!--components/agreement/index.wxml-->
+
+<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='modal-content' style='height:{{height}}'>
+    <!-- <view class="pd-tb-10" style="width:90%; margin:0 auto;">{{title}}</view> -->
+    <scroll-view scroll-y class='main-content'>     
+      <view class="pd-lr-15 bd-bt pd-bt-20 pd-tp-20 ft-se-18">选择小区</view>
+      <view class="pd-lr-15 mg-bt-30"> 
+        <checkbox-group bindchange="checkboxChange">
+          <view class="mg-tp-15 flex-col " wx:for="{{roomList}}" wx:key="index" data-value="{{item}}" style="line-height:56rpx">
+            <checkbox value="{{item.communityId}}" checked="{{item.checked}}" />
+            <view class="mg-lt-10">{{item.communityName}}</view>
+          </view>
+        </checkbox-group>
+      </view>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>关闭</view>
+      <view class='confirm-btn' style='color: #fd7380;' bindtap='confirm'>确定</view>
+    </view>
+  </view>
+</view>

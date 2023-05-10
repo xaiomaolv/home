@@ -1,0 +1,20 @@
+/* pages/property/fee/reminder/reminder.wxss */
+.card {
+  /* background-color: var(--primary-color); */
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color:#484848;
+  line-height: 56rpx;
+}
+.pay-btn{
+  border:var(--primary-color) solid 1px;
+  outline: none;
+  background: none;
+  color: var(--primary-color);
+  width:100%!important;
+  padding:0;
+  font-size: 28rpx;
+  font-weight: 400;
+}

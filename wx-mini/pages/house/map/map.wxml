@@ -1,0 +1,80 @@
+<!--pages/house/map/map.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="row">
+    <view class="cell mg-tp-15">
+      <view class="cell-col cell-title">小区</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入小区" type="text" data-obj="form.communityName" value="{{form.communityName}}"
+          disabled="{{true}}" bindinput="inputChange"></input>
+        <!-- <picker bindchange="bindCommunityChange" value="{{communityIndex}}" range="{{communityArray}}" range-key="communityName">
+          <view class="picker">
+            {{communityIndex?communityArray[communityIndex].communityName:'请选择小区'}}
+          </view>
+        </picker> -->
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell-col cell-title">楼栋</view>
+      <view class="cell-col cell-input">
+        <picker bindchange="bindFloorChange" value="{{floorIndex}}" range="{{floorArray}}" range-key="name">
+          <view class="picker">
+            {{floorIndex?floorArray[floorIndex].name:'请选择楼栋'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell-col cell-title">单元</view>
+      <view class="cell-col cell-input">
+        <picker bindchange="bindUnitChange" value="{{unitIndex}}" range="{{unitArray}}" range-key="unitNum">
+          <view class="picker">
+            {{unitIndex?unitArray[unitIndex].unitNum:'请选择单元'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell-col cell-title">房屋</view>
+      <view class="cell-col cell-input">
+        <picker bindchange="bindRoomChange" value="{{roomIndex}}" range="{{roomArray}}" range-key="roomNum">
+          <view class="picker">
+            {{roomIndex?roomArray[roomIndex].roomNum:'请选择房屋'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="cell  mg-tp-15">
+      <view class="cell-col cell-title">姓名</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入姓名" type="text" data-obj="form.nickName" value="{{form.nickName}}"
+          disabled="{{isDisabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell-col cell-title">手机号</view>
+      <view class="cell-col cell-input">
+        <input placeholder="请输入手机号" type="number" data-obj="form.phone" value="{{form.phone}}"
+          disabled="{{disabled}}" bindinput="inputChange"></input>
+      </view>
+    </view>
+
+    <view class="row mg-tp-10 notice">
+      <view class="row pd-lr-15" style="font-size:24rpx; color: rgb(177, 179, 181);">
+        <text class="notice-cell-col"> 温馨提示：</text>
+        如果业主信息不存在，请与物管联系登记修改
+      </view>
+    </view>
+  </view>
+
+  <view class='row mg-tp-30 tx-ct'>
+    <button type="primary" class="cell-primary" bindtap="bindHouse">绑定</button>
+  </view>
+</view>

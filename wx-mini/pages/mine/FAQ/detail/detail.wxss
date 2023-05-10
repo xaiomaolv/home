@@ -1,0 +1,12 @@
+/* pages/mine/FAQ/detail/detail.wxss */
+.title{
+  font-size: 36rpx;
+  color: #484848;
+}
+.cp{
+  color:#5088ff;
+}
+.content{
+  display: inline-block;
+  line-height: 48rpx;
+}

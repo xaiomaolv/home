@@ -1,0 +1,209 @@
+<!--pages/payment/index/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <!-- <view class="my-pay">我的交费</view>
+  <view class="card" wx:if="{{houseList.length == 0}}">
+    <view class="flex-col-24 pd-tb-15">
+      <view class="tx-ct">暂无交费事项</view>
+    </view>
+  </view> -->
+
+<!-- 
+  <view class="row flex-col flex-wrap tx-ct">
+    <view wx:for="{{houseList}}" wx:key="item" class="flex-row flex-col-24 card1 card-bg" data-value="{{item}}">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-20 tx-lt">{{item.roomNum}}</view>
+        <view class="flex-col-6 tx-rt" data-value="{{item}}">
+          <button class="pay-btn " data-value="{{item}}" bindtap="paySingleList">交费历史</button>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="flex-col flex-col-24" data-value="{{item}}" bindtap="paySingBill">
+        <view class="flex-col-20 tx-lt">【{{item.community.communityName}}】{{item.floor.name}} {{item.unit.unitNum}}单元
+          {{item.roomNum}}室</view>
+        <view class='arrow'></view>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="tx-ct  primary-card">
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-12" bindtap="BindUse">
+        <view class=" background size ">
+          <view class="iconfont icon-fangwufangchan">
+          </view>
+        </view>
+        <view class="title_text mg-tp-no">常用</view>    
+      </view>
+
+      <view class="flex-col-12 " bindtap="handleRecords">
+        <view class="background size">
+          <view class="iconfont icon-jilu"></view>
+        </view>
+        <view class="title_text mg-tp-no" >交费明细</view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- <view class="tx-ct mg-tp-15 card">
+    <view class="flex-col-24 mg-bt-10 tx-lt p-title">金融服务</view>
+    <view class="flex-col flex-wrap">
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class=" background size  ">
+          <view class="iconfont icon-xinyongka"></view>
+        </view>
+        <view class="title_text">信用卡</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-dkw_daikuan-"></view>
+        </view>
+        <view class="title_text">贷款</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-38"></view>
+        </view>
+        <view class="title_text  bg-w">理财</view>
+      </view>
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-baoxianfuwu"></view>
+        </view>
+        <view class="title_text  bg-w">保险</view>
+      </view>
+    </view>
+  </view> -->
+
+  <view class="tx-ct mg-tp-15 card">
+    <!-- <view class="flex-col-24 mg-bt-10 tx-lt p-title ft-se-16">生活服务</view> -->
+    <view class="flex-col flex-wrap">
+     
+      <view class="flex-col-6  bg-w" bindtap="handleProperty">
+        <view class="background size">
+          <!-- <view class="iconfont icon-wuyefeiyongchuzhang"></view> -->
+          <image src="../../../img/icon/wyf.png" style="width: 30px; height: 30px;"></image>
+        </view>
+        <view class="title_text  bg-w">物业费</view>
+      </view>
+     
+      <view class="flex-col-6  bg-w" bindtap="handleStopCar">
+        <view class="background size">
+          <!-- <view class="iconfont icon-tingcheshoufei"></view> -->
+          <image src="../../../img/icon/tcf.png" style="width: 30px; height: 30px;"></image>
+        </view>
+        <view class="title_text  bg-w">停车费</view>
+      </view>
+
+
+      <view class="flex-col-6  bg-w" bindtap="handledeposit">
+        <view class="background size">
+          <!-- <view class="iconfont icon-yajin"></view> -->
+          <image src="../../../img/icon/yj.png" style="width: 30px; height: 30px;"></image>
+        </view>
+        <view class="title_text  bg-w">押金</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleGas" >
+        <view class="background size">
+          <!-- <view class="iconfont icon-ranqifei1"></view> -->
+          <image src="../../../img/icon/rqf.png" style="width: 30px; height: 30px;"></image>
+        </view>
+        <view class="title_text  bg-w">燃气改造费</view>
+      </view> 
+
+      <!-- <view class="flex-col-6  bg-w" bindtap="handlePark">
+        <view class="background size">
+          <view class="iconfont icon-tingche"></view>
+        </view>
+        <view class="title_text  bg-w">智慧出行</view>
+      </view> -->
+
+      <!-- <view class="flex-col-6  bg-w" bindtap="handleRecords">
+        <view class="background size">
+          <view class="iconfont icon-jilu"></view>
+        </view>
+        <view class="title_text  bg-w" >交费记录</view>
+      </view> -->
+
+      <!-- <view class="flex-col-6  bg-w" bindtap="handleWater">
+        <view class="background size">
+          <view class="iconfont icon-shuifei"></view>
+        </view>
+        <view class="title_text  bg-w">水费</view>
+      </view>
+      <view class="flex-col-6  bg-w" bindtap="handleElectry"> 
+        <view class="background size">
+          <view class="iconfont icon-dianfei"></view>
+        </view>
+        <view class="title_text  bg-w">电费</view>
+      </view>
+      <view class="flex-col-6  bg-w" bindtap="handleGas">
+        <view class="background size">
+          <view class="iconfont icon-keranqiti"></view>
+        </view>
+        <view class="title_text  bg-w">燃气费</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-kuandai"></view>
+        </view>
+        <view class="title_text">宽带费</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class=" background size  ">
+          <view class="iconfont icon-shoujichongzhi"></view>
+        </view>
+        <view class="title_text">手机充值</view>
+      </view>
+
+     
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-weibiaoti2fuzhi18"></view>
+        </view>
+        <view class="title_text  bg-w">油卡充值</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-zhengzhouyinhangAPPtubiaodiergaolunkuohuachunse-16"></view>
+        </view>
+        <view class="title_text  bg-w">ETC办理</view>
+      </view>
+
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-menjin"></view>
+        </view>
+        <view class="title_text  bg-w">门禁</view>
+      </view>
+      <view class="flex-col-6  bg-w" bindtap="handleTo">
+        <view class="background size">
+          <view class="iconfont icon-fangke"></view>
+        </view>
+        <view class="title_text  bg-w">访客</view>
+      </view> -->
+    </view>
+  </view>
+
+  <!-- <view class="flex-col-24 flex-wrap tx-ct mg-tp-30">
+    <view class="flex-col-16 flex-col" style="margin:0 auto;" >
+      <view class="flex-col-8" bindtap="payDetail">
+        交费记录
+      </view>
+      <view class="flex-col-8 border-lt-rt" bindtap="handleTo">
+        交费设置
+      </view>
+      <view class="flex-col-8" bindtap="handleTo">
+        帮助中心
+      </view>
+    </view>
+  </view> -->
+</view>

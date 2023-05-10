@@ -1,0 +1,67 @@
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <!-- <view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab"
+      class="{{currentTab==index ? 'cur' : ''}}">
+      <text>{{item.value}}</text>
+    </view>
+  </view> -->
+  <!-- <view class="row flex-col flex-wrap mg-tp-15">
+    <view class="flex-col-6 tx-ct" wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab">
+      <view class="tab {{currentTab == index ? 'active' : ''}}">{{item.value}}</view>
+    </view>
+  </view> -->
+  <view class="cu-form-group" style="margin-top:1rpx">
+    <picker mode="date"  data-obj="form.start_date" bindchange="bindDateChange">
+      <view>
+        <text class="title">开始日期：</text> <text class="input">{{form.start_date}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group"style="margin-top:1rpx"> 
+    <picker mode="date"  data-obj="form.end_date" bindchange="bindDateChange">
+      <view >
+        <text class="title">结束日期：</text> <text class="input">{{form.end_date}}</text>
+      </view>
+    </picker>
+  </view>
+ 
+
+  <button class="primary btn-block" bindtap="search">查询</button>
+  
+  <!-- <view class="margin-top">
+    <view class="record" wx:key="index" wx:for="{{list}}">
+      <view class="flex-col">
+        <text class="flex-col-12 tx-lt action">{{item.remarks}}</text>
+        <text class="flex-col-12 tx-rt money">{{item.amount}}<text>元</text></text>
+      </view>
+      <view class="flex-col under">
+        <text class="flex-col-18 tx-lt time">入账日期：<text space="ensp">{{item.busidate}} {{item.busitime}}</text></text>
+        <text class="flex-col-6 tx-rt succerr">{{item.drcrf}}</text>
+      </view>
+    </view>
+    <view  class="tx-ct" wx:if="{{list.length !== 0}}">
+      <text wx:if="{{!showPageNext}}" class="lodemore" ><text class="cuIcon-loading2" style="font-size:48rpx;"></text>没有更多了...</text>
+      <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2" style="font-size:48rpx;"></text>加载更多...</text>
+    </view>
+  </view> -->
+  <view class="margin-top">
+    <view class="record" wx:key="index" wx:for="{{list}}">
+      <view class="flex-col">
+        <text class="flex-col-12 tx-lt action">{{item.trans_type}}</text>
+        <text class="flex-col-12 tx-rt money">{{item.amount}}<text>元</text></text>
+      </view>
+      <view class="flex-col under">
+        <text class="flex-col-18 tx-lt time">日期：<text space="ensp">{{item.trx_date}} {{item.trx_time}}</text></text>
+        <text class="flex-col-6 tx-rt succerr {{item.status == 0 ? 'green':'red' }}">{{item.doc}}</text>
+      </view>
+    </view>
+    <view  class="tx-ct" wx:if="{{list.length !== 0}}">
+      <text wx:if="{{!showPageNext}}" class="lodemore" ><text class="cuIcon-loading2" style="font-size:48rpx;"></text>没有更多了...</text>
+      <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2" style="font-size:48rpx;"></text>加载更多...</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+<!--pages/payment/commonUse/index/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <view class="my-pay">我的交费</view>
+  <view class="row">
+    <view class="mg-tp-15 pd-15 card" wx:for="{{list}}" wx:key="index" data-value="{{item}}" bindtap="handlePay">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-4 tx-ct">
+          <view class="iconfont icon-wuyefeiyongchuzhang" style="font-size:56rpx; color:var(--primary-color)">
+          </view>
+        </view>
+        <view class="flex-col-18 tx-lt">
+          <view class="flex-col-24">{{item.category.categoryName}}</view>
+          <view class="divLine"></view>
+          <view class="flex-col-24"> {{item.room.community.communityName}}{{item.room.floor.name}}{{item.room.unit.unitNum}}{{item.room.roomNum}}  |  {{item.room.owner.ownerName}}</view>
+        </view>
+        <view class="flex-col-2 tx-rt"
+        >
+          <text class="cuIcon-right lg text-gray inline"></text>
+        </view>
+      </view>
+    </view> 
+
+    <view class="mg-tp-15 pd-15 card" wx:if="{{list.length == 0}}">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-24 tx-ct">
+         暂无交费事项
+        </view>        
+      </view>
+    </view> 
+    
+    <view class="tx-ct" wx:if="{{list.length !== 0}}">
+    <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>没有更多了...</text>
+    <!-- <text wx:if="{{showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+        style="font-size:48rpx;"></text>加载更多...</text> -->
+  </view>
+  </view>
+</view>

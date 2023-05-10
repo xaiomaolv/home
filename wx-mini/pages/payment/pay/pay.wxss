@@ -1,0 +1,51 @@
+/* pages/payment/pay/pay.wxss */
+.bankcard {
+  /* background-color: var(--primary-color); */
+  background-color:#FFF;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 40px 15px;
+  /* color: white; */
+  /* height: 350rpx; */
+}
+.money {
+  font-size: 36px;
+  padding-top: 20px;
+  border-bottom: #dadada solid 1px;
+}
+
+.money .num {
+  font-size: 28px;
+  height: 50px;
+  /* color: #FFF; */
+}
+.flag{
+  text-align: center;
+}
+.yuan{
+  font-size: 24px;
+}
+.tips {
+  margin-left: 20px;
+  font-size: 10px;
+  color: gray;
+}
+
+.sum button {
+  margin-top: 20px;
+  margin-left: 18px !important;
+  width: 80px !important;
+}
+
+.sum .btn{
+  border: var(--primary-color) solid 1px;
+  color: var(--primary-color);
+}
+
+.submit-btn {
+  margin-top: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 92% !important;
+}
+

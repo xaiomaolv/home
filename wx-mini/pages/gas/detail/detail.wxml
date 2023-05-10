@@ -1,0 +1,78 @@
+<!--pages/gas/detail/detail.wxml-->
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+<view class="container  {{show? 'Fixed':''}}">
+    <view class='copy'>
+        <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+    </view>
+
+    <view class="row">
+        <view class="mg-tp-15 pd-15 card" wx:if="{{info.type == 2}}"  style="line-height:56rpx">
+            <view class=" row  tx-lt">
+
+                <view class="flex-col-24 tx-lt">
+                    <view class="row flex-col pd-tp-15 ">
+                        <view class="flex-col-8">欠费金额</view>
+                        <view class="flex-col-10">
+                            {{info.totalBill? info.totalBill + '元' : ''}}
+                        </view>
+
+                    </view>
+                    <view class="row flex-col">
+                        <view class="flex-col-8">交费户名</view>
+                        <view class="flex-col-16">
+                            {{info.ownerName}}
+                        </view>
+                    </view>
+
+
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费标题</view>
+                        <view class="flex-col-16">
+                            {{info.payTitle}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">交费类目</view>
+                        <view class="flex-col-16">
+                            {{info.categoryName}}
+                        </view>
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                        <view class="flex-col-8">账单区间</view>
+                        <view class="flex-col-16">
+                            {{info.intervalStart? info.intervalStart: ''}}
+                        </view>                    
+
+                    </view>
+                    <view class="row flex-col  flex-col-item">
+                            <view class="flex-col-8">当前期数</view>
+                            <view class="flex-col-16">
+                                {{ (index + 1) + '期' }}
+                            </view>
+                        </view>
+                </view>
+
+            </view>
+        </view>
+
+         <view class="mg-tp-15 pd-15 card" style="line-height:56rpx"  wx:if="{{params.type == 1}}" >
+
+            <view class=" row  tx-lt pd-tb-20 ">
+                <view class=" ft-se-16 tx-lt">
+                    定金剩余应还金额（元）
+                </view>
+                <view class=" ft-se-18 ft-bd tx-lt mg-tp-10">
+                    {{depositAmount}}
+                </view>
+               
+            </view>
+        </view>
+
+
+        <view class='row mg-20 tx-ct' wx:if="{{!row.ifPay}}">
+            <button class="submit-btn primary btn-block" bindtap="handlePay">还款</button>
+        </view>
+    </view>
+</view>
+<showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' phone="{{phone}}" width="85%" title="短信验证">
+</showmodal>

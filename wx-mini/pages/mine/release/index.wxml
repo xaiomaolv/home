@@ -1,0 +1,32 @@
+<!--pages/mine/release/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+
+  <view class="row">
+    <view wx:for="{{list}}" wx:key="item" class="flex-row flex-col-24 card" data-value="{{item}}">
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-16 tx-lt">小区：{{item.communityName}}</view>
+        <view class="flex-col-8 tx-rt">
+
+          <switch checked="{{item.ifWith}}" data-value="{{item}}" data-index="{{index}}" bindchange="switchChange" />
+        </view>
+
+      </view>
+      <view class="flex-col flex-col-24">
+        <view class="flex-col-24 tx-lt">签约状态：{{item.ifWith? '已签约':'未签约'}}</view>
+      </view>
+    </view>
+
+    <view class="mg-tp-15  card " wx:if="{{list.length == 0}}">
+      <view class="flex-col-24 tx-ct pd-tb-20">
+        暂无签约记录
+      </view>
+    </view>
+  </view>
+</view>
+
+<withhol class="agreement" bind:withholcancel='handleCencel' bind:withholconfirm='handleConfirm'></withhol>
+
+<sign class="sign" bind:signcancel='signCancel' bind:signconfirm='signConfirm' canvasShow="{{canvasShow}}"></sign>

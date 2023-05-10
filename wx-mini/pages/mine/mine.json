@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "showmodal":"/components/cardno/index",
+    "logo":"/components/logo/logo",
+    "unbind":"/components/unbind/index",
+    "unbindmodal":"/components/unbindmodal/index"
+  }
+}
+

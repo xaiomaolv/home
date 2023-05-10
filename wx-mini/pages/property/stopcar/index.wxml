@@ -1,0 +1,106 @@
+<!--pages/property/property.wxml-->
+<view class="container">
+  <!-- <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view> -->
+
+  <view class="row">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="mg-tp-15 pd-15 card" wx:for="{{list}}" wx:key="index" data-value="{{item}}" 
+        style="line-height:56rpx">
+        <view class="icon">
+          <view class="iconfont icon-wuyefeiyongchuzhang" style="font-size:36rpx;"></view>
+        </view>
+        <view class=" row  tx-lt">
+          <view class="flex-col-24 tx-rt">
+            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+          </view>
+
+          <view class="flex-col-24 tx-lt">
+            <view class="row flex-col pd-tp-15 ">
+              <view class="flex-col-8">停车费</view>
+              <view class="flex-col-16">
+                {{item.totalBill? item.totalBill + '元' : ''}}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">交费标题</view>
+              <view class="flex-col-16">
+                {{item.payTitle}}
+              </view>
+            </view>
+            <view class="row flex-col">
+              <view class="flex-col-8">车主姓名</view>
+              <view class="flex-col-16">
+                {{item.room.owner.ownerName}}
+              </view>
+            </view>
+            
+            <!-- <view class="row flex-col">
+              <view class="flex-col-8">交费单位</view>
+              <view class="flex-col-16">
+                {{item.room.community.communityName ? item.room.community.communityName : ''}}
+              </view>
+            </view> -->
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">车牌号</view>
+              <view class="flex-col-16">
+                {{item.paySubjects}}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">账单区间</view>
+              <view class="flex-col-16">
+                {{item.intervalStart? item.intervalStart: ''}} {{item.intervalStart || item.intervalEnd ? '至': ''}}
+                {{item.intervalEnd? item.intervalEnd: ''}}
+              </view>
+            </view>
+            <view class="row flex-col  flex-col-item">
+              <view class="flex-col-8">停车点</view>
+              <view class="flex-col-16">
+                {{item.stopName}}
+              </view>
+            </view>
+          </view>
+       
+
+      </view>
+    </checkbox-group>
+    <view class="mg-tp-15  card "   wx:if="{{list.length == 0}}">
+      <view class="flex-col-24 tx-ct pd-tb-20">
+        暂无需交的停车费
+      </view>
+    </view>
+
+    <view class="tx-ct " wx:if="{{list.length !== 0}}">
+      <text wx:if="{{showPageNext}}" class="lodemore"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>没有更多了...</text>
+      <!-- <text wx:if="{{!showPageNext}}" class="lodemore" bindtap="next"><text class="cuIcon-loading2"
+          style="font-size:48rpx;"></text>加载更多...</text> -->
+    </view>
+
+    <view class="row flex-col mg-tp-10 {{!showPageNext? 'mg-tp-30':''}}" >
+      <view class="flex-col-24 tx-ct" bindtap="handleRecords">交费记录</view>
+    </view>
+
+
+  </view>
+
+  <view class="row flex-col bg-w fixed-bottom" style="z-index: 999;" wx:if="{{list.length !== 0}}">
+    <view class="flex-col-6 pd-tb-20 pd-lt-15">
+      <checkbox bindtap="selectall" value="{{selectAll}}" checked="{{selectAll}}" />
+    </view>
+    <view class="flex-col-12 pd-rt-10 flex-col">
+      <view class="flex-col-24 pd-tb-20">
+        合计：{{total? total + '元': '0.00'}}
+      </view>
+    </view>
+    <view class="flex-col-6 tx-ct " >
+      <button class="row tx-ct account" bindtap="handlePay" >立即交费</button>
+    </view>
+  </view>
+</view>
+<showmodal class="showmodal" bind:cancel="cancel" bind:confirm='confirm' phone="{{phone}}"
+    width="85%" title="短信验证">
+  </showmodal>

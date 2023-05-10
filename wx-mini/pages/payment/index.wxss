@@ -1,0 +1,65 @@
+/* pages/Payment/index.wxss */
+.card {
+  /* background-color: var(--primary-color); */
+  background-color:#FFF;
+  border-radius: var(--border-radius);
+  margin: 30rpx 20rpx 0 20rpx ;
+  padding: 30rpx;
+  color: #484848;
+  line-height: 56rpx;
+}
+.pay-btn{
+  border:var(--primary-color) solid 1px;
+  outline: none;
+  background: none;
+  color: var(--primary-color);
+  width:100%!important;
+  padding:0;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.tabNav {
+  /* z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  display: flex;
+  padding: 0 20rpx;
+  border-bottom: 1px solid #dedede;
+  box-sizing: border-box;
+}
+
+.tabNav> view {
+  color: #484848;
+  width: 50%;
+  text-align: center;
+  /* margin-right: 50rpx; */
+}
+
+.tabNav> view:last-child {
+  margin-right: 0;
+}
+
+.tabNav> view text {
+  width: 100%;
+  /* padding: 0 15rpx; */
+  height: 75rpx;
+  display: inline-block;
+}
+
+.tabNav .cur text {
+  /* width: 100%; */
+  border-bottom: 5rpx solid #4aad05;
+  color: #4aad05;
+}
+.orderInfo-item{
+  line-height: 48rpx;
+}
+.pd-15{
+  padding: 30rpx;
+}

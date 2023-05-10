@@ -1,0 +1,45 @@
+<!--pages/wallet/index/index.wxml-->
+<view class="container">
+  <view class='copy'>
+    <image src="/img/icbc.png"></image>本服务由中国工商银行云南省分行提供
+  </view>
+  <view class="primary-card" style="position: relative;">
+    <view class="more">
+      <button class="cu-btn line-white round sm" style="width:100%" bindtap="detail">详情</button>
+      <button class="cu-btn line-white round sm margin-top" style="width:100%;" bindtap="bind">银行卡管理</button>
+    </view>
+    <view class="row" style="line-height:56rpx;">
+      <view class="title">零钱账户（元）</view>
+      <view class="money">{{ info.balance ? info.balance : '0.00' }}</view>  
+      <view class="account">{{info.bind_card_tail}}</view>
+    </view>
+  </view>
+
+  <view class='nav-list mg-tp-15'>
+    <navigator hover-class='none' class="nav-li" style="background-color:var(--primary-color);color:var(--white);"
+      bindtap="charge">
+      <view class="nav-title">转入</view>
+      <view class="nav-name">资金</view>
+      <text class='cuIcon-recharge'></text>
+    </navigator>
+    <navigator hover-class='none' class="nav-li" style="background-color:var(--primary-color);color:var(--white);"
+      bindtap="cash">
+      <view class="nav-title">转出</view>
+      <view class="nav-name">资金</view>
+      <text class='cuIcon-vipcard'></text>
+    </navigator>
+    <navigator hover-class='none' class="nav-li" style="background-color:var(--primary-color);color:var(--white);"
+      bindtap="record">
+      <view class="nav-title">查询</view>
+      <view class="nav-name">资金转入/出记录</view>
+      <text class='cuIcon-form'></text>
+    </navigator>
+    <navigator hover-class='none' class="nav-li" style="background-color:var(--primary-color);color:var(--white);"
+      bindtap="transDetail">
+      <view class="nav-title">查询</view>
+      <view class="nav-name">交费记录</view>
+      <text class='cuIcon-copy'></text>
+    </navigator>
+  </view>
+
+</view>
